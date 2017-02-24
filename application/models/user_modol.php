@@ -4,15 +4,16 @@ class User_modol extends CI_Model {
 
 	public function save($username,$password)
 	{
-		$this->db->insert('t_user',array(
-			'username'=>$username,
-			'password'=>$password
+		$this->db->insert('edu_user',array(
+			'user_Name'=>$username,
+			'user_Pwd'=>$password,
+			'user_Power'=>1
 		));
 		return $this->db->affected_rows();
 	}
 	public function get_by_name_name($name){
-		$query= $this->db->get_where('t_user',array(
-				'username'=>$name
+		$query= $this->db->get_where('edu_user',array(
+				'user_Name'=>$name
 		));
 		return $query->row();
 	}
