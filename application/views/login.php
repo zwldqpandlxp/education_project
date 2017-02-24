@@ -26,13 +26,10 @@
     <div class="myapp-login-logo-block  tpl-login-max">
         <div class="myapp-login-logo-text">
             <div class="myapp-login-logo-text">
-                Amaze UI<span> Login</span> <i class="am-icon-skyatlas"></i>
-
+                ZN<span> 在线学习系统</span>
             </div>
         </div>
-
         <div class="login-font">
-            <i>Log In </i> or <span> Sign Up</span>
         </div>
         <div class="am-u-sm-10 login-am-center">
             <form class="am-form">
@@ -41,10 +38,13 @@
                         <input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
                     </div>
                     <div class="am-form-group">
-                        <input type="password" class="" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
+                        <input type="password" class="" id="doc-ipt-pwd-1" placeholder="输入个密码吧">
                     </div>
                     <p>
                         <button type="submit" class="am-btn am-btn-default">登录</button>
+                    </p>
+                    <p>
+                        <button type="submit" class="am-btn am-btn-default">注册</button>
                     </p>
                 </fieldset>
             </form>

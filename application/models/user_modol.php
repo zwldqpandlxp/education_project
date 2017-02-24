@@ -10,5 +10,10 @@ class User_modol extends CI_Model {
 		));
 		return $this->db->affected_rows();
 	}
-	
+	public function get_by_name_name($name){
+		$query= $this->db->get_where('t_user',array(
+				'username'=>$name
+		));
+		return $query->row();
+	}
 }
