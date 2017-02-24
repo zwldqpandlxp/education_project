@@ -2,10 +2,10 @@
 
 class User_modol extends CI_Model {
 
-	public function save($usename,$password)
+	public function save($username,$password)
 	{
 		$this->db->insert('t_user',array(
-			'username'=>$usename,
+			'username'=>$username,
 			'password'=>$password
 		));
 		return $this->db->affected_rows();

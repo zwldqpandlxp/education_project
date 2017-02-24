@@ -31,14 +31,14 @@
         <div class="login-font">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form" action="welcome/do_reg">
+            <form class="am-form" action="welcome/do_reg" method="POST">
                 <fieldset>
                     <div class="am-form-group">
-                        <input type="text" class="" id="doc-ipt-email-1" placeholder="输入用户账号">
+                        <input type="text" class="" id="doc-ipt-email-1" name="username" placeholder="输入用户账号">
                         <span id="name" ></span>
                     </div>
                     <div >
-                        <input type="password" id="pass"  placeholder="输入密码">
+                        <input type="password" id="pass" name="password"  placeholder="输入密码">
                         <span id="pws"></span>
                     </div>
                     <div class="am-form-group">

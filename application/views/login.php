@@ -32,10 +32,10 @@
         <div class="login-font">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form">
+            <form class="am-form" method="post">
                 <fieldset>
                     <div class="am-form-group">
-                        <input type="email" class="" id="doc-ipt-email-1" placeholder="输入用户账号">
+                        <input type="text" class="" id="doc-ipt-email-1" placeholder="输入用户账号">
                     </div>
                     <div class="am-form-group">
                         <input type="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
@@ -48,8 +48,6 @@
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/app.js"></script>
 </body>
 
 </html>

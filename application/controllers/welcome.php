@@ -22,8 +22,8 @@ class Welcome extends CI_Controller {
         }
     }
     public  function do_reg(){
-        $username=$this->input->post('doc-ipt-email-1');
-        $password=$this->input->post('pass');
+        $username=$this->input->post('username');
+        $password=$this->input->post('password');
         $this->load->model('user_modol');
         $row=$this->user_modol->save($username,$password);
         if($row>0){
