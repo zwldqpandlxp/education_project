@@ -31,23 +31,22 @@
         <div class="login-font">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form">
+            <form class="am-form" action="welcome/do_reg">
                 <fieldset>
                     <div class="am-form-group">
                         <input type="text" class="" id="doc-ipt-email-1" placeholder="输入用户账号">
                         <span id="name" ></span>
                     </div>
                     <div >
-                        <input type="password" class=""  placeholder="输入个密码吧">
+                        <input type="password" id="pass"  placeholder="输入密码">
+                        <span id="pws"></span>
                     </div>
                     <div class="am-form-group">
                         <input type="password" class="" id="doc-ipt-pwd-1" placeholder="再输一遍密码">
+                        <span id="pws2"></span>
                     </div>
                     <p>
                         <button type="submit" class="am-btn am-btn-default">提交</button>
-                    </p>
-                    <p>
-                        <button type="submit" class="am-btn am-btn-default">重置</button>
                     </p>
                 </fieldset>
             </form>
@@ -59,15 +58,10 @@
     $(function(){
         var index=true;
         $('#doc-ipt-email-1').on('focusout', function (e,prem) {
-            var reg = /[0-9+]/;
             if(this.value.length!=10){
-//                $('#name').html('账号不为10位！');
                 alert('账号不为10位！');
                 index=false;
                 prem && (prem.bsubmit=false);
-            }else if(!reg.test(this.value)){
-                alert('账号应该全为数字！');
-                index=false;
             }else{
                 index=true;
             }
@@ -85,7 +79,23 @@
                 }
             }, 'text');
         });
-
+        $('#pass').on('focusout', function (e,prem) {
+            var reg =/^\d{8,}$/;
+            if(this.value.length < 8||reg.test(this.value)){
+                $('#pws').html('至少8位并且不能全为数字！');
+                prem && (prem.bsubmit=false);
+            }else {
+                $('#pws').html('√');
+            }
+        });
+        $('#doc-ipt-pwd-1').on('focusout', function (e,prem) {
+            if(this.value!= $('#pass').val()){
+                $('#pws2').html('密码不相同！');
+                prem && (prem.bsubmit=false);
+            }else {
+                $('#pws2').html('√');
+            }
+        });
     })
 </script>
 </body>

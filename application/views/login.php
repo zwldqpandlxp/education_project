@@ -35,23 +35,18 @@
             <form class="am-form">
                 <fieldset>
                     <div class="am-form-group">
-                        <input type="email" class="" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                        <input type="email" class="" id="doc-ipt-email-1" placeholder="输入用户账号">
                     </div>
                     <div class="am-form-group">
-                        <input type="password" class="" id="doc-ipt-pwd-1" placeholder="输入个密码吧">
+                        <input type="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
                     </div>
-                    <p>
-                        <button type="submit" class="am-btn am-btn-default">登录</button>
-                    </p>
-                    <p>
-                        <button type="submit" class="am-btn am-btn-default">注册</button>
-                    </p>
+                        <button type="submit" class="am-btn am-btn-default"><a href="welcome/index" style="color:#fff">登录 </a></button>
+                        <button type="submit" class="am-btn am-btn-default"><a href="welcome/reg" style="color:#fff">注册</a></button>
                 </fieldset>
             </form>
         </div>
     </div>
 </div>
-
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/app.js"></script>

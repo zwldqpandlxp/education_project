@@ -1840,7 +1840,6 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
 }
 
 .myapp-login {
-    background: #334054;
     background-size: 100%;
     height: 100%;
 }
@@ -1914,7 +1913,7 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
 }
 
 .login-am-center {
-    margin: 0 auto;
+    margin: 0 100px;
     float: none;
 }
 
@@ -1924,25 +1923,28 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     font-size: 12px;
     line-height: 30px;
     text-indent: 10px;
+    width: 70%;
+
+}
+.login-am-center .am-form .am-form-group #doc-ipt-pwd-1{
     border-radius: 0px 0px 6px 6px;
 }
-
 .login-am-center .am-form .am-form-group:first-child input {
     border-radius: 6px 6px 0px 0px;
 }
 
 .login-am-center .am-btn-default {
-    width: 100%;
+    width: 70%;
     border-radius: 6px;
     background: #53d192;
     border: none;
     color: #fff;
     font-size: 14px;
     line-height: 30px;
+    margin-top: 1.6rem;
 }
-
 .tpl-login-max {
-    max-width: 640px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
