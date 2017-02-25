@@ -5,7 +5,7 @@
     <div class="tpl-left-nav-list">
         <ul class="tpl-left-nav-menu">
             <li class="tpl-left-nav-item">
-                <a href="welcome/t_index" class="nav-link">
+                <a href="welcome/index" class="nav-link">
                     <i class="am-icon-home"></i>
                     <span>首页</span>
                 </a>
