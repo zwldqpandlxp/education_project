@@ -56,45 +56,59 @@
 <script src="assets/js/jquery-1.9.1.min.js"></script>
 <script>
     $(function(){
-        var index=true;
-        $('#doc-ipt-email-1').on('focusout', function (e,prem) {
-            if(this.value.length!=8){
-                alert('账号不为8位！');
-                index=false;
-                prem && (prem.bsubmit=false);
-            }else{
-                index=true;
-            }
-        });
+        $elem = $('#submit');
+        $elem.prop('disabled',true);
+        var flag = [false,false,false];
+        /** 用户名校验 **/
         $('#doc-ipt-email-1').on('blur', function () {
-            $.get('welcome/check_name', {
-                uname: this.value
-            }, function (data) {
-                if ($.trim(data) == 'success' && $('#doc-ipt-email-1').val() != '' && index) {
-                    $('#name').html('√');
-                } else if(index) {
-                    $('#name').html('该用户名已被占用');
-                }else {
-                    $('#name').html('×');
-                }
-            }, 'text');
-        });
-        $('#pass').on('focusout', function (e,prem) {
-            var reg =/^\d{8,}$/;
-            if(this.value.length < 8||reg.test(this.value)){
-                $('#pws').html('至少8位并且不能全为数字！');
-                prem && (prem.bsubmit=false);
-            }else {
-                $('#pws').html('√');
+            var reg =/^\d{8}$/;
+            if(reg.test(this.value)){
+                $.get('welcome/check_name', {
+                    username: this.value
+                }, function (data) {
+                    if ($.trim(data) == 'success') {
+                        $('#name').html('√');
+                        flag[0] = true;
+                    } else {
+                        $('#name').html('该用户名不可用');
+                        flag[0] = false;
+                    }
+                    if(flag[0] && flag[1] && flag[2]) $elem.prop('disabled',false);
+                }, 'text');
+            }else{
+                $('#name').html('该用户名不可用');
+                flag[0] = false;
             }
+            if(flag[0] && flag[1] && flag[2]) $elem.prop('disabled',false);
         });
-        $('#doc-ipt-pwd-1').on('focusout', function (e,prem) {
-            if(this.value!= $('#pass').val()){
-                $('#pws2').html('密码不相同！');
-                prem && (prem.bsubmit=false);
-            }else {
-                $('#pws2').html('√');
+
+        var $password = $('#password');
+        var $repassword = $('#doc-ipt-pwd-1');
+        var $psw = $('#psw');
+        var $psw2 = $('#psw2');
+        /** 密码校验 **/
+        $password.on('blur', function () {
+            var reg =/^\d$/;
+            if(this.value.length < 8 || reg.test(this.value)) {
+                $psw.html('至少8位并且不能全为数字！');
+                flag[1] = false;
+            }else{
+                $psw.html('√');
+                flag[1] = true;
             }
+            if(flag[0] && flag[1] && flag[2]) $elem.prop('disabled',false);
+        });
+
+        /** 确认密码校验 **/
+        $repassword.on('blur', function () {
+            if(this.value!= $password.val()){
+                $psw2.html('密码不相同！');
+                flag[2] = false;
+            }else {
+                $psw2.html('√');
+                flag[2] = true;
+            }
+            if(flag[0] && flag[1] && flag[2]) $elem.prop('disabled',false);
         });
     })
 </script>

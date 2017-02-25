@@ -2,6 +2,11 @@
 
 class Welcome extends CI_Controller {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('user_modol');
+    }
  	public function login(){
 		$this->load->view('login');
 	}
@@ -30,24 +35,16 @@ class Welcome extends CI_Controller {
     public  function do_reg(){
         $username=$this->input->post('username');
         $password=$this->input->post('password');
-        $len=0;
-        if(strlen($username)!=10||strlen($username)!=8){
-            $this->load->view('reg');
+        if(strlen($username) == 10){
+            $row = $this->user_modol->save($username, $password, 1);
         }else{
-            if(strlen($username)==10){
-                $len=1;
-            }else if(strlen($username)==8){
-                $len=2;
-            }
-            $this->load->model('user_modol');
-            $row=$this->user_modol->save($username,$password,$len);
-            if($row>0){
-                redirect('welcome/login');
-            }else{
-                $this->load->view('reg');
-            }
+            $row = $this->user_modol->save($username, $password, 2);
         }
-
+        if($row>0){
+            redirect('welcome/login');
+        }else{
+            redirect('welcome/reg');
+        }
     }
     public function check_login()
     {
@@ -96,21 +93,5 @@ class Welcome extends CI_Controller {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
