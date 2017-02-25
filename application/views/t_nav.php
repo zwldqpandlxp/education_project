@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="tpl-left-nav-item">
-                <a href="chart.html" class="nav-link tpl-left-nav-link-list active">
+                <a href="welcome/t_charts" class="nav-link tpl-left-nav-link-list active">
                     <i class="am-icon-bar-chart"></i>
                     <span>我的课程</span>
                     <i class="tpl-left-nav-content tpl-badge-danger">
@@ -62,6 +62,12 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li class="tpl-left-nav-item">
+                <a href="welcome/introduce" class="nav-link tpl-left-nav-link-list">
+                    <i class="am-icon-key"></i>
+                    <span>完善信息</span>
+                </a>
             </li>
         </ul>
     </div>

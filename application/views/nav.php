@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="tpl-left-nav-item">
-                <a href="chart.html" class="nav-link tpl-left-nav-link-list active">
+                <a href="welcome/chart" class="nav-link tpl-left-nav-link-list active">
                     <i class="am-icon-bar-chart"></i>
                     <span>我的资源</span>
                     <i class="tpl-left-nav-content tpl-badge-danger">
@@ -31,14 +31,10 @@
                         <a href="table-font-list.html">
                             <i class="am-icon-angle-right"></i>
                             <span>学生管理</span>
-                            <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                         </a>
                         <a href="form-news.html">
                             <i class="am-icon-angle-right"></i>
                             <span>课程管理</span>
-                            <i class="tpl-left-nav-content tpl-badge-primary">
-                                5
-                            </i>
                         </a>
                         <a href="form-news-list.html">
                             <i class="am-icon-angle-right"></i>
@@ -63,7 +59,6 @@
                         <a href="form-amazeui.html">
                             <i class="am-icon-angle-right"></i>
                             <span>学生评价</span>
-                            <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                         </a>
 
                         <a href="form-line.html">
@@ -77,8 +72,7 @@
             <li class="tpl-left-nav-item">
                 <a href="login.html" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-key"></i>
-                    <span>登录</span>
-
+                    <span>完善信息</span>
                 </a>
             </li>
         </ul>

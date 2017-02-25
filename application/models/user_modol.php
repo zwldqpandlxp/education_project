@@ -23,6 +23,18 @@ class User_modol extends CI_Model {
 				'user_Pwd'=>$pwd
 		));
 		return $query->row();
-
+	}
+	public function set_itro($username,$email,$gender,$result){
+		$this->db->insert('edu_student',array(
+				'stud_Name'=>$username,
+				'stud_email'=>$email,
+				'stud'=>$gender,
+				'majo_Id'=>$result
+		));
+		return $this->db->affected_rows();
+	}
+	public function get_morid_by_mor($mor){
+		$sql="select majo_Id from edu_major where majo_Name = $mor";
+		return $this->db->query($sql)->result();
 	}
 }

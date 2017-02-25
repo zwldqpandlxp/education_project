@@ -61,49 +61,6 @@
 
                 </ul>
             </li>
-            <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
-                <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="am-icon-calendar"></span> 课程 <span class="am-badge tpl-badge-primary am-round">4</span></span>
-                </a>
-                <ul class="am-dropdown-content tpl-dropdown-content">
-                    <li class="tpl-dropdown-content-external">
-                        <h3>你有 <span class="tpl-color-primary">4</span> 个任务进度</h3><a href="###">全部</a></li>
-                    <li>
-                        <a href="javascript:;" class="tpl-dropdown-content-progress">
-                                <span class="task">
-                        <span class="desc">Amaze UI 用户中心 v1.2 </span>
-                                <span class="percent">45%</span>
-                                </span>
-                            <span class="progress">
-                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-success" style="width:45%"></div></div>
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="tpl-dropdown-content-progress">
-                                <span class="task">
-                        <span class="desc">新闻内容页 </span>
-                                <span class="percent">30%</span>
-                                </span>
-                            <span class="progress">
-                       <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-secondary" style="width:30%"></div></div>
-                    </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="tpl-dropdown-content-progress">
-                                <span class="task">
-                        <span class="desc">管理中心 </span>
-                                <span class="percent">60%</span>
-                                </span>
-                            <span class="progress">
-                        <div class="am-progress tpl-progress am-progress-striped"><div class="am-progress-bar am-progress-bar-warning" style="width:60%"></div></div>
-                    </span>
-                        </a>
-                    </li>
-
-                </ul>
-            </li>
             <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen" class="tpl-header-list-link"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
@@ -111,7 +68,6 @@
                     <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
                     <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
                     <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>

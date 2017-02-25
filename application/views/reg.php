@@ -31,7 +31,7 @@
         <div class="login-font">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form" action="welcome/do_reg" method="POST">
+            <form class="am-form" id="reg1" action="welcome/do_reg" method="POST">
                 <fieldset>
                     <div class="am-form-group">
                         <input type="text" class="" id="doc-ipt-email-1" name="username" placeholder="输入用户账号">

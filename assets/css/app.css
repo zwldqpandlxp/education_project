@@ -467,7 +467,14 @@ ul.tpl-dropdown-content li>a.tpl-dropdown-content-message:last-child {
     padding-left: 255px;
     padding-top: 10px;
 }
-
+.tpl-content-wrapper #frm_reg{
+    margin: 20px 20%;
+    border: 1px solid #ccc;
+    width: 500px;
+}
+.tpl-content-wrapper #frm_reg table{
+    margin: 30px auto;
+}
 .tpl-content-wrapper-hover {
     padding-left: 0px;
 }
