@@ -63,7 +63,7 @@
             </li>
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>
+                    <span class="am-icon-calendar"></span> 课程 <span class="am-badge tpl-badge-primary am-round">4</span></span>
                 </a>
                 <ul class="am-dropdown-content tpl-dropdown-content">
                     <li class="tpl-dropdown-content-external">

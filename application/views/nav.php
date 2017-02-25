@@ -5,7 +5,7 @@
     <div class="tpl-left-nav-list">
         <ul class="tpl-left-nav-menu">
             <li class="tpl-left-nav-item">
-                <a href="index.html" class="nav-link">
+                <a href="welcome/index" class="nav-link">
                     <i class="am-icon-home"></i>
                     <span>首页</span>
                 </a>
@@ -13,7 +13,7 @@
             <li class="tpl-left-nav-item">
                 <a href="chart.html" class="nav-link tpl-left-nav-link-list active">
                     <i class="am-icon-bar-chart"></i>
-                    <span>数据表</span>
+                    <span>我的资源</span>
                     <i class="tpl-left-nav-content tpl-badge-danger">
                         12
                     </i>
@@ -23,37 +23,31 @@
             <li class="tpl-left-nav-item">
                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-table"></i>
-                    <span>表格</span>
+                    <span>教学管理</span>
                     <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
                     <li>
                         <a href="table-font-list.html">
                             <i class="am-icon-angle-right"></i>
-                            <span>文字表格</span>
+                            <span>学生管理</span>
                             <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                         </a>
-
-                        <a href="table-images-list.html">
+                        <a href="form-news.html">
                             <i class="am-icon-angle-right"></i>
-                            <span>图片表格</span>
-                            <i class="tpl-left-nav-content tpl-badge-success">
-                                18
+                            <span>课程管理</span>
+                            <i class="tpl-left-nav-content tpl-badge-primary">
+                                5
                             </i>
-
-                            <a href="form-news.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>消息列表</span>
-                                <i class="tpl-left-nav-content tpl-badge-primary">
-                                    5
-                                </i>
-
-
-                                <a href="form-news-list.html">
-                                    <i class="am-icon-angle-right"></i>
-                                    <span>文字列表</span>
-
-                                </a>
+                        </a>
+                        <a href="form-news-list.html">
+                            <i class="am-icon-angle-right"></i>
+                            <span>作业管理</span>
+                        </a>
+                        <a href="form-news-list.html">
+                            <i class="am-icon-angle-right"></i>
+                            <span>成绩管理</span>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -61,20 +55,20 @@
             <li class="tpl-left-nav-item">
                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-wpforms"></i>
-                    <span>表单</span>
+                    <span>我的评价</span>
                     <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
                     <li>
                         <a href="form-amazeui.html">
                             <i class="am-icon-angle-right"></i>
-                            <span>Amaze UI 表单</span>
+                            <span>学生评价</span>
                             <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
                         </a>
 
                         <a href="form-line.html">
                             <i class="am-icon-angle-right"></i>
-                            <span>线条表单</span>
+                            <span>学习评价</span>
                         </a>
                     </li>
                 </ul>

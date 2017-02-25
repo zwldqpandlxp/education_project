@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <base href="<?php echo site_url() ?>">
     <meta charset="utf-8">
@@ -18,21 +17,11 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
-
 </head>
-
 <body data-type="index">
-
-
 <?php include "header.php" ?>
-
-
 <div class="tpl-page-container tpl-page-header-fixed">
-
-
     <?php include "nav.php" ?>
-
-
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
             Amaze UI 首页组件
@@ -52,7 +41,6 @@
                 </p>
             </div>
         </div>
-
         <div class="row">
             <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
                 <div class="dashboard-stat blue">

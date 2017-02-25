@@ -63,7 +63,7 @@
             </li>
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="am-icon-calendar"></span> 进度 <span class="am-badge tpl-badge-primary am-round">4</span></span>
+                    <span class="am-icon-calendar"></span> 课程 <span class="am-badge tpl-badge-primary am-round">4</span></span>
                 </a>
                 <ul class="am-dropdown-content tpl-dropdown-content">
                     <li class="tpl-dropdown-content-external">
@@ -71,7 +71,7 @@
                     <li>
                         <a href="javascript:;" class="tpl-dropdown-content-progress">
                                 <span class="task">
-                        <span class="desc">Amaze UI 用户中心 v1.2 </span>
+                        <span class="desc">语文</span>
                                 <span class="percent">45%</span>
                                 </span>
                             <span class="progress">
@@ -82,7 +82,7 @@
                     <li>
                         <a href="javascript:;" class="tpl-dropdown-content-progress">
                                 <span class="task">
-                        <span class="desc">新闻内容页 </span>
+                        <span class="desc">数学</span>
                                 <span class="percent">30%</span>
                                 </span>
                             <span class="progress">
@@ -93,7 +93,7 @@
                     <li>
                         <a href="javascript:;" class="tpl-dropdown-content-progress">
                                 <span class="task">
-                        <span class="desc">管理中心 </span>
+                        <span class="desc">物理</span>
                                 <span class="percent">60%</span>
                                 </span>
                             <span class="progress">

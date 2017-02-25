@@ -20,15 +20,15 @@
     <script src="assets/js/echarts.min.js"></script>
 </head>
 <body data-type="index">
-<?php include "header.php" ?>
+<?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include "nav.php" ?>
+    <?php include "t_nav.php" ?>
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
             Amaze UI 首页组件
         </div>
         <ol class="am-breadcrumb">
-            <li><a href="welcome/index" class="am-icon-home">首页</a></li>
+            <li><a href="welcome/t_index" class="am-icon-home">首页</a></li>
             <li><a href="#">分类</a></li>
             <li class="am-active">内容</li>
         </ol>
