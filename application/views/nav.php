@@ -70,7 +70,7 @@
             </li>
 
             <li class="tpl-left-nav-item">
-                <a href="login.html" class="nav-link tpl-left-nav-link-list">
+                <a href="welcome/introduce" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-key"></i>
                     <span>完善信息</span>
                 </a>

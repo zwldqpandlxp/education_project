@@ -34,7 +34,11 @@ class User_modol extends CI_Model {
 		return $this->db->affected_rows();
 	}
 	public function get_morid_by_mor($mor){
-		$sql="select majo_Id from edu_major where majo_Name = $mor";
+		$sql="select dept_Id from edu_department where majo_Name = $mor";
+		return $this->db->query($sql)->result();
+	}
+	public function get_decid_by_dec($dec){
+		$sql="select majo_Id from edu_major where majo_Name = $dec";
 		return $this->db->query($sql)->result();
 	}
 }

@@ -35,18 +35,18 @@
                 <fieldset>
                     <div class="am-form-group">
                         <input type="text" class="" id="doc-ipt-email-1" name="username" placeholder="输入用户账号">
-                        <span id="name" ></span>
+                        <span id="name" >用户名必须八位纯数字</span>
                     </div>
                     <div >
-                        <input type="password" id="pass" name="password"  placeholder="输入密码">
-                        <span id="pws"></span>
+                        <input type="password" id="password" name="password"  placeholder="输入密码">
+                        <span id="psw"></span>
                     </div>
                     <div class="am-form-group">
                         <input type="password" class="" id="doc-ipt-pwd-1" placeholder="再输一遍密码">
-                        <span id="pws2"></span>
+                        <span id="psw2"></span>
                     </div>
                     <p>
-                        <button type="submit" class="am-btn am-btn-default">提交</button>
+                        <button type="submit" class="am-btn am-btn-default" id="submit">提交</button>
                     </p>
                 </fieldset>
             </form>
