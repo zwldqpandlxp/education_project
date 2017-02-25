@@ -1,6 +1,6 @@
 <div class="tpl-left-nav tpl-left-nav-hover">
     <div class="tpl-left-nav-title">
-        在线教育系统列表
+        Amaze UI 列表
     </div>
     <div class="tpl-left-nav-list">
         <ul class="tpl-left-nav-menu">

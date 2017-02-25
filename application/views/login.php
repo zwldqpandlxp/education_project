@@ -32,16 +32,17 @@
         <div class="login-font">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form" method="post" action="welcome/index">
+            <form class="am-form" method="post" action="welcome/check_login">
                 <fieldset>
                     <div class="am-form-group">
-                        <input type="text" class="" id="doc-ipt-email-1" placeholder="输入用户账号">
+                        <input type="text" class="" name="username" id="doc-ipt-email-1" placeholder="输入用户账号">
                     </div>
                     <div class="am-form-group">
-                        <input type="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
+                        <input type="password" name="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
                     </div>
                         <button type="submit" class="am-btn am-btn-default">登录</button>
-                        <a href="welcome/reg" style="color:#fff" class="am-btn am-btn-default">注册（仅限学生）</a>
+                        <a href="welcome/reg" style="color:#fff" class="am-btn am-btn-default">注册（学生）</a>
+                        <a href="welcome/t_reg" style="color:#fff" class="am-btn am-btn-default">注册（教师）</a>
                 </fieldset>
             </form>
         </div>
