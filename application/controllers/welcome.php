@@ -8,11 +8,16 @@ class Welcome extends CI_Controller {
     public function index(){
         $this->load->view('index');
     }
+
+    public function t_index()
+    {
+        $this->load->view('t_index');
+    }
     public function check_name()
     {
         $name=$this->input->get('uname');
-        $this->load->model('user_model');
-        $result=$this->user_model->get_by_name_name($name);
+        $this->load->model('user_modol');
+        $result=$this->user_modol->get_by_name_name($name);
         if($result){
             echo 'fail';
         }else{
@@ -43,8 +48,8 @@ class Welcome extends CI_Controller {
     {
         $username=$this->input->post('username');
         $password=$this->input->post('password');
-        $this->load->model('user_model');
-        $result=$this->user_model->get_by_name_pwd($username,$password);
+        $this->load->model('user_modol');
+        $result=$this->user_modol->get_by_name_pwd($username,$password);
         if($result){
             $this->session->set_userdata('logindata',$result);
             $loginID = $this -> session -> userdata('logindata');

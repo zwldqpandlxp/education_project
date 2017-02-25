@@ -18,11 +18,11 @@ class User_modol extends CI_Model {
 		return $query->row();
 	}
 	public function get_by_name_pwd($name,$pwd){
-		$query= $this->db->get_where('t_user',array(
-				'username'=>$name,
-				'password'=>$pwd
+		$query= $this->db->get_where('edu_user',array(
+				'user_Name'=>$name,
+				'user_Pwd'=>$pwd
 		));
-		return $query->row();   
+		return $query->row();
 
 	}
 }
