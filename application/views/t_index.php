@@ -22,7 +22,7 @@
 <body data-type="index">
 <?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include "nav.php" ?>
+    <?php include "t_nav.php" ?>
     <div class="tpl-content-wrapper">
         <div class="tpl-content-page-title">
             Amaze UI 首页组件

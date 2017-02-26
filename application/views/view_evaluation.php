@@ -21,7 +21,7 @@
 <body data-type="index">
 <?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include "t_nav.php" ?>
+    <?php include "nav.php" ?>
     <div class="tpl-content-wrapper">
         <div class="a" style="width: 1000px; height:400px"></div>
     </div>

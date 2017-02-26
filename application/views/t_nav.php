@@ -5,7 +5,7 @@
     <div class="tpl-left-nav-list">
         <ul class="tpl-left-nav-menu">
             <li class="tpl-left-nav-item">
-                <a href="welcome/index" class="nav-link">
+                <a href="welcome/t_index" class="nav-link">
                     <i class="am-icon-home"></i>
                     <span>首页</span>
                 </a>
@@ -56,7 +56,7 @@
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
                     <li>
-                        <a href="form-amazeui.html">
+                        <a href="welcome/t_view_evaluation">
                             <i class="am-icon-angle-right"></i>
                             <span>学生评价</span>
                         </a>
