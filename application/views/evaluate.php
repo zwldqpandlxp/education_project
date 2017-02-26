@@ -16,13 +16,8 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <script src="assets/js/echarts.min.js"></script>
-<!--    <style type="text/css">-->
-<!--        *{margin:0;padding:0;list-style-type:none;}-->
-<!--        a,img{border:0;}-->
-<!--        body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}-->
-<!--        p{margin:20px 0 10px 0;}-->
-<!--    </style>-->
 </head>
 <body data-type="index">
 <?php include "header.php" ?>
@@ -102,30 +97,53 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <div style="width:400px;margin:50px auto;">
-            <div>
-                <p style="font-size:20px">按时完成作业：</p>
-                <div id="star1"></div>
-                <div id="result1"></div>
-                <span id="jg1"></span>
-            </div>
-            <div>
-                <p style="font-size:20px">作业成绩（100分）：</p>
-                <div id="star3"></div>
-                <div id="result3"></div>
-                <span id="jg3"></span>
-            </div>
-            <div>
-                <p style="font-size:20px">学习时间：</p>
-                <div id="star2"></div>
-                <div id="result2"></div>
-                <span id="jg2"></span>
-            </div>
+        <div style="width: 90%; margin: 10px auto;">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>评价项</th>
+                    <th>线上教学系统教师评价</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="info">
+                    <th>按时完成作业：</th>
+                    <th>
+                        <div>
+                            <div id="star2"></div>
+                            <div id="result2"></div>
+                            <span id="jg2"></span>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>作业成绩：</th>
+                    <th>
+                        <div>
+                            <div id="star3"></div>
+                            <div id="result3"></div>
+                            <span id="jg3"></span>
+                        </div>
+                    </th>
+                </tr>
+                <tr class="info">
+                    <th>学习时间：</th>
+                    <th>
+                        <div>
+                            <div id="star1"></div>
+                            <div id="result1"></div>
+                            <span id="jg1"></span>
+                        </div>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/jquery.raty.js"></script>
