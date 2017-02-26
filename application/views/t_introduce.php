@@ -21,7 +21,7 @@
 <body data-type="index">
 <?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include "nav.php" ?>
+    <?php include "t_nav.php" ?>
     <div class="tpl-content-wrapper">
         <form id="frm_reg" action="welcome/dot_itro" method="POST" style="float:left; width:620px;">
            <table cellpadding="0" cellspacing="0">
@@ -57,7 +57,7 @@
                 <tr class="buttons">
                     <th>&nbsp;</th>
                     <td style="padding: 20px 0pt;">
-                        <input value=" 注册新用户 " class="BUTTON SUBMIT" type="submit">
+                        <input value=" 提交 " class="BUTTON SUBMIT" type="submit">
                     </td>
                 </tr>
                 </tbody>

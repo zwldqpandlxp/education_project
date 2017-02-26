@@ -110,6 +110,15 @@ class Welcome extends CI_Controller {
             $this->load->view('t_introduce');
         }
     }
+
+    public function view_evaluation()
+    {
+        $this->load->view('view_evaluation');
+    }
+    public function t_view_evaluation()
+    {
+        $this->load->view('t_view_evaluation');
+    }
 }
 
 
