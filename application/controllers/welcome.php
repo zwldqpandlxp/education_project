@@ -29,18 +29,15 @@ class Welcome extends CI_Controller {
             $loginID = $this -> session -> userdata('logindata');
             $user_Power=$loginID->user_Power;
             if($user_Power==1){
-                redirect('welcome/index');
+                redirect('student/index');
             }else{
-                redirect('welcome/t_index');
+                redirect('teacher/t_index');
             }
         }else{
-            echo"hahaha";
+            redirect('welcome/login');
         }
     }
 
-    public function introduce(){
-        $this->load->view('introduce');
-    }
     public  function do_reg(){
         $username=$this->input->post('username');
         $password=$this->input->post('password');
@@ -52,12 +49,9 @@ class Welcome extends CI_Controller {
         if($row>0){
             redirect('welcome/login');
         }else{
-            redirect('welcome/reg');
+            redirect('student/reg');
         }
     }
-
-
-
 }
 
 

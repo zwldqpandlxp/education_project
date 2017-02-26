@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+<!--    <style type="text/css">-->
+<!--        *{margin:0;padding:0;list-style-type:none;}-->
+<!--        a,img{border:0;}-->
+<!--        body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}-->
+<!--        p{margin:20px 0 10px 0;}-->
+<!--    </style>-->
 </head>
 <body data-type="index">
 <?php include "header.php" ?>
@@ -67,14 +73,14 @@
                     </ul>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav" id="location">
                         <i class="am-icon-wpforms"></i>
                         <span>教师评价</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="student/evaluate" class="subnav">
+                            <a href="student/evaluate" class="subnav active">
                                 <i class="am-icon-angle-right"></i>
                                 <span>开始评价</span>
                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -87,7 +93,7 @@
                     </ul>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="student/introduce" class="nav-link tpl-left-nav-link-list subnav active">
+                    <a href="student/introduce" class="nav-link tpl-left-nav-link-list subnav">
                         <i class="am-icon-key"></i>
                         <span>完善信息</span>
                     </a>
@@ -96,52 +102,73 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <form id="frm_reg" action="student/do_itro" method="POST" style="float:left; width:620px;">
-           <table cellpadding="0" cellspacing="0">
-                <tbody>
-                <tr>
-                    <th>姓名：</th>
-                    <td><input name="username" id="username" maxlength="20" class="TEXT" style="width: 150px;"
-                               type="text">
-                        <span id="name_msg">请使用真实姓名</span>
-                    </td>
-                </tr>
-                <tr id="tr_email">
-                    <th nowrap="nowrap">电子邮箱：</th>
-                    <td>
-                        <input name="email" id="email" class="TEXT" style="width: 200px;" type="text">
-                        <span id="bbb" ></span>
-                    </td>
-                </tr>
-                <tr id="mor">
-                    <th>专业</th>
-                    <td>
-                        <input name="mor" id="mor" class="TEXT" style="width: 200px;" type="text">
-                    </td>
-                </tr>
-                <tr id="tr_gender">
-                    <th>性别：</th>
-                    <td>
-                        <input name="gender" value="1" id="gender_1" type="radio"><label for="gender_1">男</label>&nbsp;&nbsp;&nbsp;
-                        <input name="gender" value="2" id="gender_2" type="radio"><label for="gender_2">女</label>
-                        <span class="gender_msg">请选择性别</span>
-                    </td>
-                </tr>
-                <tr class="buttons">
-                    <th>&nbsp;</th>
-                    <td style="padding: 20px 0pt;">
-                        <input value=" 提交 " class="BUTTON SUBMIT" type="submit">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+        <div style="width:400px;margin:50px auto;">
+            <div>
+                <p style="font-size:20px">按时完成作业：</p>
+                <div id="star1"></div>
+                <div id="result1"></div>
+                <span id="jg1"></span>
+            </div>
+            <div>
+                <p style="font-size:20px">作业成绩（100分）：</p>
+                <div id="star3"></div>
+                <div id="result3"></div>
+                <span id="jg3"></span>
+            </div>
+            <div>
+                <p style="font-size:20px">学习时间：</p>
+                <div id="star2"></div>
+                <div id="result2"></div>
+                <span id="jg2"></span>
+            </div>
+        </div>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
-</body>
+<script src="assets/js/jquery.raty.js"></script>
+<script>
+    $(window).load(function () {
+        $('#location').trigger('click');
+    });
+    rat('star1','result1',1,'jg1');
+    rat('star2','result2',1,'jg2');
+    rat('star3','result3',10,'jg3');
+    function rat(star,result,m,jg){
 
+        star= '#' + star;
+        result= '#' + result;
+        jg='#'+jg;
+        $(result).hide();//将结果DIV隐藏
+
+        $(star).raty({
+            hints: ['10','20', '30', '40', '50','60', '70', '80', '90', '100'],
+            path: "assets/img",
+            starOff: 'star-off-big.png',
+            starOn: 'star-on-big.png',
+            size: 24,
+            start: 40,
+            showHalf: true,
+            target: result,
+            targetKeep : true,//targetKeep 属性设置为true，用户的选择值才会被保持在目标DIV中，否则只是鼠标悬停时有值，而鼠标离开后这个值就会消失
+            click: function (score, evt) {
+//			alert('你的评分是'+score*m+'分');
+                $(jg).html('你的评分是'+score*m+'分');
+            }
+        });
+
+        /*第二种方式可以设置一个隐蔽的HTML元素来保存用户的选择值，然后可以在脚本里面通过jQuery选中这个元素来处理该值。 弹出结果
+         var text = $(result).text();
+         $('img').click(function () {
+         if ($(result).text() != text) {
+         alert('你的评分是'+$(result).text()/m+'分');
+         alert(result);
+         return;
+         }
+         });*/
+    }
+</script>
+</body>
 </html>

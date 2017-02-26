@@ -1,19 +1,32 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Student extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
         $this->load->model('user_modol');
     }
 
-    public function index(){
+    public function index(){                    //后期需要移除
         $this->load->view('index');
     }
     public function reg(){
         $this->load->view('reg');
     }
-
+    public function introduce(){
+        $this->load->view('introduce');
+    }
+    public function lesson(){
+        $this->load->view('lesson');
+    }
+    public function evaluate()
+    {
+        $this->load->view('evaluate');
+    }
+    public function view_evaluate()
+    {
+        $this->load->view('view_evaluate');
+    }
     public function do_itro(){
         $username=$this->input->post('username');
         $email=$this->input->post('email');
@@ -32,10 +45,4 @@ class Welcome extends CI_Controller {
             $this->load->view('introduce');
         }
     }
-
-    public function view_evaluation()
-    {
-        $this->load->view('view_evaluation');
-    }
-
 }

@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="student/lesson" class="nav-link tpl-left-nav-link-list subnav">
+                    <a href="student/lesson" class="nav-link tpl-left-nav-link-list subnav active">
                         <i class="am-icon-bar-chart"></i>
                         <span>我的课程</span>
                         <i class="tpl-left-nav-content tpl-badge-danger">
@@ -44,7 +44,7 @@
                 </li>
 
                 <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav" id="location">
                         <i class="am-icon-table"></i>
                         <span>选课中心</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
@@ -87,7 +87,7 @@
                     </ul>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="student/introduce" class="nav-link tpl-left-nav-link-list subnav active">
+                    <a href="student/introduce" class="nav-link tpl-left-nav-link-list subnav">
                         <i class="am-icon-key"></i>
                         <span>完善信息</span>
                     </a>
@@ -96,46 +96,7 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <form id="frm_reg" action="student/do_itro" method="POST" style="float:left; width:620px;">
-           <table cellpadding="0" cellspacing="0">
-                <tbody>
-                <tr>
-                    <th>姓名：</th>
-                    <td><input name="username" id="username" maxlength="20" class="TEXT" style="width: 150px;"
-                               type="text">
-                        <span id="name_msg">请使用真实姓名</span>
-                    </td>
-                </tr>
-                <tr id="tr_email">
-                    <th nowrap="nowrap">电子邮箱：</th>
-                    <td>
-                        <input name="email" id="email" class="TEXT" style="width: 200px;" type="text">
-                        <span id="bbb" ></span>
-                    </td>
-                </tr>
-                <tr id="mor">
-                    <th>专业</th>
-                    <td>
-                        <input name="mor" id="mor" class="TEXT" style="width: 200px;" type="text">
-                    </td>
-                </tr>
-                <tr id="tr_gender">
-                    <th>性别：</th>
-                    <td>
-                        <input name="gender" value="1" id="gender_1" type="radio"><label for="gender_1">男</label>&nbsp;&nbsp;&nbsp;
-                        <input name="gender" value="2" id="gender_2" type="radio"><label for="gender_2">女</label>
-                        <span class="gender_msg">请选择性别</span>
-                    </td>
-                </tr>
-                <tr class="buttons">
-                    <th>&nbsp;</th>
-                    <td style="padding: 20px 0pt;">
-                        <input value=" 提交 " class="BUTTON SUBMIT" type="submit">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+        我是Lesson！！！
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
