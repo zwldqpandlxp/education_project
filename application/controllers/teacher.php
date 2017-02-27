@@ -31,18 +31,4 @@ class Welcome extends CI_Controller{
         $this->load->view('t_view_evaluation');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

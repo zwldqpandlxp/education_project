@@ -24,7 +24,7 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
-            Amaze UI 列表
+            ZN在线教育列表
         </div>
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
@@ -138,6 +138,7 @@
                 </tr>
                 </tbody>
             </table>
+            <button type="button" class="btn btn-success" style="position: absolute; left: 90%;">确认提交</button>
         </div>
     </div>
 </div>
