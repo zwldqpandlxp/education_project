@@ -3,7 +3,11 @@
 class Teacher extends CI_Controller{
     public function t_index()
     {
-        $this->load->view('t_index');
+        $this->load->model('teacher_model');
+        $results=$this->teacher_model->getallclass();
+        $this->load->view('t_index',array(
+            'results'=>$results
+        ));
     }
     public function t_reg(){
         $this->load->view('t_reg');

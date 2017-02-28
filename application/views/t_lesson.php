@@ -130,18 +130,6 @@
                     <img src="" alt="中华古诗词">
                     <p>中华古诗词，授课教师:XXX</p>
                 </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
             </div>
         </div>
     </div>

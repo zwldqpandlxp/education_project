@@ -17,11 +17,10 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>
     <style>
         .lesson{
             width: 25%;
-            height: 300px;
+            height: 330px;
             border:1px solid;
             float: left;
             margin-right:10px;
@@ -124,22 +123,14 @@
                 <li class="am-active"><a href="javascript:;">已有课程</a></li>
             </ul>
             <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
+                <?php foreach ($results as $result){ ?>
+                    <div class="lesson">
+                        <img src="" alt="<?php echo $result->cour_Name?>">
+                        <p><?php echo $result->cour_Name?>，授课教师:<?php echo $result->teac_Name?>
+                        学分：<?php echo $result->cour_Credit?>学分</p>
+                    </div>
+                <?php }?>
+
             </div>
         </div>
     </div>
