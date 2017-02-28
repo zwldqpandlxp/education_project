@@ -17,23 +17,11 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+    <link href="assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="assets/js/star-rating.js" type="text/javascript"></script>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/echarts.min.js"></script>
-    <style>
-        .lesson{
-            width: 25%;
-            height: 300px;
-            border:1px solid;
-            float: left;
-            margin-right:10px;
-            margin-bottom:10px;
-            text-align: center;
-        }
-        .lesson img{
-            margin:0 5%;
-            height: 250px;
-            width: 90%;
-        }
-    </style>
 </head>
 <body data-type="index">
 <?php include "t_header.php" ?>
@@ -119,36 +107,23 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <div class="lesson-container" style="width: 80%; margin: 0 auto">
-            <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">已有课程</a></li>
-            </ul>
-            <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-            </div>
-        </div>
+        <h3 style="font-size: 20px;margin: 30px 0 15px 150px">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;账号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平时成绩&nbsp;&nbsp;
+            考试成绩</h3>
+        <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
+            <tr>
+                <th>张三</th>
+                <th>10000000000</th>
+                <th>80</th>
+                <th>80</th>
+            </tr>
+        </table>
     </div>
-
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>

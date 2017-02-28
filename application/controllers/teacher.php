@@ -58,4 +58,40 @@ class Teacher extends CI_Controller{
     public function t_up_lesson(){
         $this->load->view('t_up_lesson');
     }
+    public function t_up(){
+        $filePath='assets/file/';
+        if(!is_dir($filePath)){
+            mkdir($filePath);
+        }
+        $type=array("txt","xlsx");
+        in_array((strtolower(substr(strchr($_FILES['file']['name'],'.'),1))),$type);
+        $filename=implode('.',$type);
+        $filename=time();
+        $filename=$filename.(strchr($_FILES['file']['name'],'.'));
+        if(file_exists($filePath)){
+            $bool=move_uploaded_file($_FILES['file']['tmp_name'],$filePath.$_FILES['file']['name']);
+            if($bool){
+                $str='上传成功';
+                $this->load->view('t_up_lesson1',array(
+                    'str' => $str
+                ));
+            }else{
+                echo 'no';
+            }
+        }else{
+            echo 'hehe';
+        }
+    }
+    public function t_up_lesson1(){
+        $this->load->view('t_up_lesson1');
+    }
+    public function t_choose_stu(){
+        $this->load->view('t_choose_stu');
+    }
+    public function t_sor(){
+        $this->load->view('t_sor');
+    }
+    public function t_insert_sor(){
+        $this->load->view('t_insert_sor');
+    }
 }

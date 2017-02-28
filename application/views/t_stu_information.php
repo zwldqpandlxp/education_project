@@ -1,3 +1,4 @@
+<?php $name = $this->session->userdata('logindata'); ?>
 <!doctype html>
 <html>
 <head>
@@ -23,7 +24,7 @@
     <script src="assets/js/echarts.min.js"></script>
 </head>
 <body data-type="index">
-<?php include "header.php" ?>
+<?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -83,7 +84,7 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="teacher/t_view_evaluation">
+                            <a href="teacher/t_choose_stu">
                                 <i class="am-icon-angle-right"></i>
                                 <span>学生评价</span>
                             </a>

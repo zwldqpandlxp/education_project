@@ -1,3 +1,4 @@
+<?php $name = $this->session->userdata('logindata'); ?>
 <!doctype html>
 <html>
 <head>
@@ -20,7 +21,7 @@
     <script src="assets/js/echarts.min.js"></script>
 </head>
 <body data-type="index">
-<?php include "header.php" ?>
+<?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -80,7 +81,7 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="teacher/t_view_evaluation">
+                            <a href="teacher/t_choose_stu">
                                 <i class="am-icon-angle-right"></i>
                                 <span>学生评价</span>
                             </a>
@@ -104,6 +105,7 @@
     </div>
     <div class="tpl-content-wrapper">
         <div style="width: 90%; margin: 10px auto;">
+            <input type="hidden" value="">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -178,8 +180,10 @@
             target: result,
             targetKeep : true,//targetKeep 属性设置为true，用户的选择值才会被保持在目标DIV中，否则只是鼠标悬停时有值，而鼠标离开后这个值就会消失
             click: function (score, evt) {
-//			alert('你的评分是'+score*m+'分');
                 $(jg).html('你的评分是'+score*m+'分');
+                $.get("teacher/t_pinglun?id="+id,function(data,status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
             }
         });
 

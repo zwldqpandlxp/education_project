@@ -1,3 +1,4 @@
+<?php $name = $this->session->userdata('logindata'); ?>
 <!doctype html>
 <html>
 <head>
@@ -36,7 +37,7 @@
     </style>
 </head>
 <body data-type="index">
-<?php include "header.php" ?>
+<?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -96,7 +97,7 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="teacher/t_view_evaluation">
+                            <a href="teacher/t_choose_stu">
                                 <i class="am-icon-angle-right"></i>
                                 <span>学生评价</span>
                             </a>
@@ -124,7 +125,10 @@
                 <li><a href="teacher/t_lesson">已上传的课程</a></li>
                 <li class="am-active"><a href="javascript:;">上传课程</a></li>
             </ul>
-            <input type="file" style="margin: 30px 0;width: 200px">
+            <form action="teacher/t_up" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" style="margin: 30px 0;width: 200px">
+                <input type="submit" value="提交" name="sub">
+            </form>
         </div>
     </div>
 </div>
