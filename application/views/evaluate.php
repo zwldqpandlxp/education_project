@@ -1,3 +1,15 @@
+<?php
+error_reporting(E_ALL & ~E_NOTICE);
+$Hash = array();
+$teacher = array();
+foreach($teachers as $value){
+    if($Hash[$value -> teac_Id] != 1){
+        $teacher[] = $value -> teac_Name;
+        $Hash[$value -> teac_Id] = 1;
+    }
+}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -16,7 +28,6 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <script src="assets/js/echarts.min.js"></script>
 </head>
 <body data-type="index">
@@ -24,7 +35,7 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
-            ZN在线教育列表
+            Amaze UI 列表
         </div>
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
@@ -68,7 +79,7 @@
                     </ul>
                 </li>
                 <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav" id="location">
+                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav" id="location" >
                         <i class="am-icon-wpforms"></i>
                         <span>教师评价</span>
                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
@@ -97,96 +108,95 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <div style="width: 90%; margin: 10px auto;">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>评价项</th>
-                    <th>线上教学系统教师评价</th>
+        <table class="am-table .am-table-bordered">
+            <thead>
+            <tr>
+                <th>教师姓名</th>
+                <th>评价</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php $Count = 0?>
+            <?php foreach($teacher as $value){ ++$Count?>
+                <tr <?php if($Count % 2) echo 'class="am-primary"'?>>
+                    <td><?php echo $value?></td>
+                    <td><a href="student/evaluate_index?teacher=<?php echo $value?>">评价</a></td>
                 </tr>
-                </thead>
-                <tbody>
-                <tr class="info">
-                    <th>按时完成作业：</th>
-                    <th>
-                        <div>
-                            <div id="star2"></div>
-                            <div id="result2"></div>
-                            <span id="jg2"></span>
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th>作业成绩：</th>
-                    <th>
-                        <div>
-                            <div id="star3"></div>
-                            <div id="result3"></div>
-                            <span id="jg3"></span>
-                        </div>
-                    </th>
-                </tr>
-                <tr class="info">
-                    <th>学习时间：</th>
-                    <th>
-                        <div>
-                            <div id="star1"></div>
-                            <div id="result1"></div>
-                            <span id="jg1"></span>
-                        </div>
-                    </th>
-                </tr>
-                </tbody>
-            </table>
-            <button type="button" class="btn btn-success" style="position: absolute; left: 90%;">确认提交</button>
-        </div>
+            <?php }?>
+            </tbody>
+        </table>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
-<script src="assets/js/jquery.raty.js"></script>
 <script>
+    option = {
+        title: {
+            text: '我的评价情况'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: ['教学态度', '备课情况', '作业批改情况', '与学生互动情况','言行举止'],
+            align: 'right',
+            right: 10
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'category',
+            data: ['墨渊', '夜华', '白浅', '折颜', '帝君']
+        }],
+        yAxis: [{
+            type: 'value',
+            name: '分数',
+            axisLabel: {
+                formatter: '{value}'
+            }
+        }],
+        series: [{
+            name: '教学态度',
+            type: 'bar',
+            data: [20, 12, 31, 34, 31]
+        }, {
+            name: '备课情况',
+            type: 'bar',
+            data: [10, 20, 5, 9, 3]
+        }, {
+            name: '作业批改情况',
+            type: 'bar',
+            data: [1, 1, 2, 3, 1]
+        }, {
+            name: '与学生互动情况',
+            type: 'bar',
+            data: [0.1, 2, 3, 1, 0.5]
+        }, {
+            name: '言行举止',
+            type: 'bar',
+            data: [0.1, 2, 3, 1, 0.5]
+        }]
+    };
     $(window).load(function () {
         $('#location').trigger('click');
     });
-    rat('star1','result1',1,'jg1');
-    rat('star2','result2',1,'jg2');
-    rat('star3','result3',10,'jg3');
-    function rat(star,result,m,jg){
-
-        star= '#' + star;
-        result= '#' + result;
-        jg='#'+jg;
-        $(result).hide();//将结果DIV隐藏
-
-        $(star).raty({
-            hints: ['10','20', '30', '40', '50','60', '70', '80', '90', '100'],
-            path: "assets/img",
-            starOff: 'star-off-big.png',
-            starOn: 'star-on-big.png',
-            size: 24,
-            start: 40,
-            showHalf: true,
-            target: result,
-            targetKeep : true,//targetKeep 属性设置为true，用户的选择值才会被保持在目标DIV中，否则只是鼠标悬停时有值，而鼠标离开后这个值就会消失
-            click: function (score, evt) {
-//			alert('你的评分是'+score*m+'分');
-                $(jg).html('你的评分是'+score*m+'分');
-            }
-        });
-
-        /*第二种方式可以设置一个隐蔽的HTML元素来保存用户的选择值，然后可以在脚本里面通过jQuery选中这个元素来处理该值。 弹出结果
-         var text = $(result).text();
-         $('img').click(function () {
-         if ($(result).text() != text) {
-         alert('你的评分是'+$(result).text()/m+'分');
-         alert(result);
-         return;
-         }
-         });*/
-    }
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+

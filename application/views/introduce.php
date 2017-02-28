@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <style>
+        .am-radio{
+            display: inline-block;
+            margin-top:5px;
+        }
+    </style>
 </head>
 <body data-type="index">
 <?php include "header.php" ?>
@@ -96,46 +102,30 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <form id="frm_reg" action="student/do_itro" method="POST" style="float:left; width:620px;">
-           <table cellpadding="0" cellspacing="0">
-                <tbody>
-                <tr>
-                    <th>姓名：</th>
-                    <td><input name="username" id="username" maxlength="20" class="TEXT" style="width: 150px;"
-                               type="text">
-                        <span id="name_msg">请使用真实姓名</span>
-                    </td>
-                </tr>
-                <tr id="tr_email">
-                    <th nowrap="nowrap">电子邮箱：</th>
-                    <td>
-                        <input name="email" id="email" class="TEXT" style="width: 200px;" type="text">
-                        <span id="bbb" ></span>
-                    </td>
-                </tr>
-                <tr id="mor">
-                    <th>专业</th>
-                    <td>
-                        <input name="mor" id="mor" class="TEXT" style="width: 200px;" type="text">
-                    </td>
-                </tr>
-                <tr id="tr_gender">
-                    <th>性别：</th>
-                    <td>
-                        <input name="gender" value="1" id="gender_1" type="radio"><label for="gender_1">男</label>&nbsp;&nbsp;&nbsp;
-                        <input name="gender" value="2" id="gender_2" type="radio"><label for="gender_2">女</label>
-                        <span class="gender_msg">请选择性别</span>
-                    </td>
-                </tr>
-                <tr class="buttons">
-                    <th>&nbsp;</th>
-                    <td style="padding: 20px 0pt;">
-                        <input value=" 提交 " class="BUTTON SUBMIT" type="submit">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+        <div class="am-g">
+            <div class="am-u-md-8 am-u-sm-centered">
+                <form class="am-form">
+                    <fieldset class="am-form-set">
+                        <input type="text" placeholder="真实姓名">
+                        <input type="text" placeholder="电子邮箱">
+                        <input type="email" placeholder="专业">
+                        <div class="am-radio" style="margin-right: 10px;">
+                            <label>
+                                <input type="radio" name="doc-radio-1" value="option1" checked>
+                                男
+                            </label>
+                        </div>
+                        <div class="am-radio" style="margin-top: 5px;">
+                            <label>
+                                <input type="radio" name="doc-radio-1" value="option2">
+                                女
+                            </label>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="am-btn am-btn-primary am-btn-block">完善信息</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
