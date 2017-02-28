@@ -19,6 +19,9 @@ class Student extends CI_Controller {
     public function lesson(){
         $this->load->view('lesson');
     }
+    public function lessoned(){
+        $this->load->view('lessoned');
+    }
     public function evaluate()
     {
         $this->load->view('evaluate');

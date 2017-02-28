@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
-<!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
+    <!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
     <style>
         .lesson{
             width: 25%;
@@ -115,8 +115,8 @@
     <div class="tpl-content-wrapper">
         <div class="lesson-container" style="width: 80%; margin: 0 auto">
             <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">正在进行</a></li>
-                <li><a href="student/lessoned">已完成</a></li>
+                <li><a href="student/lesson">正在进行</a></li>
+                <li class="am-active"><a href="javascript:;">已完成</a></li>
             </ul>
             <div class="lesson-content">
                 <div class="lesson">
