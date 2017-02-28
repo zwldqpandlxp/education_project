@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller{
+class Teacher extends CI_Controller{
     public function t_index()
     {
         $this->load->view('t_index');
@@ -31,4 +31,31 @@ class Welcome extends CI_Controller{
         $this->load->view('t_view_evaluation');
     }
 
+    public function t_stu_information()
+    {
+         $this->load->view('t_stu_information');
+    }
+
+    public function t_introduce()
+    {
+        $this->load->view('t_introduce');
+    }
+    public function t_test(){
+        $this->load->view('t_test');
+    }
+    public function t_see_test(){
+        $this->load->view('t_see_test');
+    }
+    public function t_add_test(){
+        $this->load->view('t_add_test');
+    }
+    public function t_change_test(){
+        $this->load->view('t_change_test');
+    }
+    public function t_lesson(){
+        $this->load->view('t_lesson');
+    }
+    public function t_up_lesson(){
+        $this->load->view('t_up_lesson');
+    }
 }

@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <base href="<?php echo site_url() ?>">
     <meta charset="utf-8">
@@ -18,25 +17,9 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
-    <style>
-        .lesson{
-            width: 25%;
-            height: 300px;
-            border:1px solid;
-            float: left;
-            margin-right:10px;
-            margin-bottom:10px;
-            text-align: center;
-        }
-        .lesson img{
-            margin:0 5%;
-            height: 250px;
-            width: 90%;
-        }
-    </style>
 </head>
 <body data-type="index">
-<?php include "t_header.php" ?>
+<?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -72,11 +55,11 @@
                                 <i class="am-icon-angle-right"></i>
                                 <span>学生管理</span>
                             </a>
-                            <a href="form-news.html">
+                            <a href="teacher/t_test">
                                 <i class="am-icon-angle-right"></i>
                                 <span>课程管理</span>
                             </a>
-                            <a href="teacher/t_test">
+                            <a href="form-news-list.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>作业管理</span>
                             </a>
@@ -119,36 +102,22 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <div class="lesson-container" style="width: 80%; margin: 0 auto">
-            <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">已有课程</a></li>
-            </ul>
-            <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-            </div>
+        <a href="teacher/t_test" style="margin: 10px 0 15px 650px;display: block">返回-></a>
+        <div id="test" style="width: 600px;margin: 30px 100px;">
+            <h3>操作系统</h3>
+            <p>2017.01.22-2017.02.16</p>
+            <p style="text-indent: 28px">根据学生的学习情况进行监督，例如在课程进1/5处设置多个触发提醒，若学生在线学习时长小于3小时 || 作业未完成 || 未按时提交作业 ，教师均可以一键提醒，督促学生学习
+                ⑤成绩录入模块
+                将学生的考试成绩和平时成绩结合，给出学生最终得分。并生成可视化图表
+            </p>
+            <a href="teacher/t_change_test" style="margin: 10px 0 15px 560px;display: block">修改</a>
         </div>
-    </div>
 
+    </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>

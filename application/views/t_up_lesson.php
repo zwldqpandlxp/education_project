@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <base href="<?php echo site_url() ?>">
     <meta charset="utf-8">
@@ -18,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
     <style>
         .lesson{
             width: 25%;
@@ -36,7 +36,7 @@
     </style>
 </head>
 <body data-type="index">
-<?php include "t_header.php" ?>
+<?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -121,34 +121,16 @@
     <div class="tpl-content-wrapper">
         <div class="lesson-container" style="width: 80%; margin: 0 auto">
             <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">已有课程</a></li>
+                <li><a href="teacher/t_lesson">已上传的课程</a></li>
+                <li class="am-active"><a href="javascript:;">上传课程</a></li>
             </ul>
-            <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-            </div>
+            <input type="file" style="margin: 30px 0;width: 200px">
         </div>
     </div>
-
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>

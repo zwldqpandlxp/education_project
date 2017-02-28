@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <base href="<?php echo site_url() ?>">
     <meta charset="utf-8">
@@ -18,25 +17,9 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
-    <style>
-        .lesson{
-            width: 25%;
-            height: 300px;
-            border:1px solid;
-            float: left;
-            margin-right:10px;
-            margin-bottom:10px;
-            text-align: center;
-        }
-        .lesson img{
-            margin:0 5%;
-            height: 250px;
-            width: 90%;
-        }
-    </style>
 </head>
 <body data-type="index">
-<?php include "t_header.php" ?>
+<?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -119,36 +102,18 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <div class="lesson-container" style="width: 80%; margin: 0 auto">
-            <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">已有课程</a></li>
-            </ul>
-            <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-            </div>
-        </div>
+        <form action="post">
+            作业名称：<input type="text" style="border: 1px solid #ccc; margin: 10px 0"><br>
+            作业内容：<textarea name="content" id="ta_blog_content"
+                           style="width:750px;height:300px;"></textarea><br>
+            截至时间：<input type="date" style="border: 1px solid #ccc; margin: 10px 0"><br>
+            <input type="submit" value="提交">
+        </form>
     </div>
-
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>

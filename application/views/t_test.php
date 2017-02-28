@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <base href="<?php echo site_url() ?>">
     <meta charset="utf-8">
@@ -17,26 +16,14 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+    <link href="assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="assets/js/star-rating.js" type="text/javascript"></script>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/echarts.min.js"></script>
-    <style>
-        .lesson{
-            width: 25%;
-            height: 300px;
-            border:1px solid;
-            float: left;
-            margin-right:10px;
-            margin-bottom:10px;
-            text-align: center;
-        }
-        .lesson img{
-            margin:0 5%;
-            height: 250px;
-            width: 90%;
-        }
-    </style>
 </head>
 <body data-type="index">
-<?php include "t_header.php" ?>
+<?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
@@ -119,36 +106,30 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <div class="lesson-container" style="width: 80%; margin: 0 auto">
-            <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">已有课程</a></li>
-            </ul>
-            <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-            </div>
-        </div>
+        <a href=""style="margin: 40px 0 15px 680px;display: block">添加作业+</a>
+        <h3 style="font-size: 20px;margin: 0 0 15px 150px">作业名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结束时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</h3>
+            <table class="table table-hover" style="width: 700px; margin: 0 150px">
+                <tr>
+                    <th><a href="">操作系统</a></th>
+                    <th>2017.01.26</th>
+                    <th>2017.02.29</th>
+                    <th><a href="teacher/t_see_test">查看</a>|<a href="">删除</a></th>
+                </tr>
+                <tr>
+                    <th><a href="">操作系统</a></th>
+                    <th>2017.01.26</th>
+                    <th>2017.02.29</th>
+                    <th><a href="teacher/t_see_test">查看</a>|<a href="">删除</a></th>
+                </tr>
+            </table>
     </div>
-
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>
