@@ -112,33 +112,18 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</h3>
         <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
-           <tr>
-               <th>张三</th>
-               <th>10000000000</th>
-               <th>123@qq.com</th>
-               <th><a href="">删除</a></th>
-           </tr>
-            <tr>
-                <th>张三</th>
-                <th>10000000000</th>
-                <th>123@qq.com</th>
-                <th><a href="">删除</a></th>
-            </tr>
-            <tr>
-                <th>张三</th>
-                <th>10000000000</th>
-                <th>123@qq.com</th>
-                <th><a href="">删除</a></th>
-            </tr>
-            <tr>
-                <th>张三</th>
-                <th>10000000000</th>
-                <th>123@qq.com</th>
-                <th><a href="">删除</a></th>
-            </tr>
+            <?php foreach($results as $result){?>
+                <tr>
+                    <th><?php echo $result->stud_Name?></th>
+                    <th><?php echo $result->user_Name?></th>
+                    <th><?php echo $result->stud_Email?></th>
+                    <th><a href="">删除</a></th>
+                </tr>
+            <?php }?>
+
         </table>
-        <form action=""style="margin-left:535px;">
-            <input type="text" placeholder="请输入要添加的学生账号" style="border: 1px solid #ccc;">
+        <form action="teacher/add_stu"style="margin-left:535px;" method="post">
+            <input type="text" name="name" placeholder="请输入要添加的学生账号" style="border: 1px solid #ccc;">
             <input type="submit" value="添加" >
         </form>
     </div>

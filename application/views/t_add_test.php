@@ -103,11 +103,12 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <form action="post">
-            作业名称：<input type="text" style="border: 1px solid #ccc; margin: 10px 0"><br>
+        <form action="teacher/add_test" method="post">
+            作业名称：<input type="text" name="name" style="border: 1px solid #ccc; margin: 10px 0"><br>
+            作业科目：<input type="text" name="course" style="border: 1px solid #ccc; margin: 10px 0"><br>
             作业内容：<textarea name="content" id="ta_blog_content"
                            style="width:750px;height:300px;"></textarea><br>
-            截至时间：<input type="date" style="border: 1px solid #ccc; margin: 10px 0"><br>
+            截至时间：<input type="date" name="data" style="border: 1px solid #ccc; margin: 10px 0"><br>
             <input type="submit" value="提交" style="margin-left: 780px">
         </form>
     </div>

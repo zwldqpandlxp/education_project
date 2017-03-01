@@ -126,10 +126,13 @@
                 <li><a href="teacher/t_up_lesson">上传课程</a></li>
             </ul>
             <div class="lesson-content">
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
+                    <?php foreach ($results as $result){ ?>
+                        <div class="lesson">
+                            <img src="" alt="<?php echo $result->cour_Name?>">
+                            <p><?php echo $result->cour_Name?>
+                                学分：<?php echo $result->cour_Credit?>学分</p>
+                        </div>
+                    <?php }?>
             </div>
         </div>
     </div>
