@@ -108,9 +108,9 @@
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
-                </a>
-                <ul class="am-dropdown-content">
+                    <span class="tpl-header-list-user-nick"><?php echo $name->user_Name?></span><span class="tpl-header-list-user-ico"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
                     <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>

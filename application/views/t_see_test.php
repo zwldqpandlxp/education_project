@@ -56,11 +56,11 @@
                                 <i class="am-icon-angle-right"></i>
                                 <span>学生管理</span>
                             </a>
-                            <a href="form-news.html">
+                            <a href="teacher/t_test">
                                 <i class="am-icon-angle-right"></i>
                                 <span>课程管理</span>
                             </a>
-                            <a href="teacher/t_test">
+                            <a href="form-news-list.html">
                                 <i class="am-icon-angle-right"></i>
                                 <span>作业管理</span>
                             </a>
@@ -103,46 +103,17 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <form id="frm_reg" action="welcome/dot_itro" method="POST" style="float:left; width:620px;">
-           <table cellpadding="0" cellspacing="0">
-                <tbody>
-                <tr>
-                    <th>姓名：</th>
-                    <td><input name="username" id="username" maxlength="20" class="TEXT" style="width: 150px;"
-                               type="text">
-                        <span id="name_msg">请使用真实姓名</span>
-                    </td>
-                </tr>
-                <tr id="tr_email">
-                    <th nowrap="nowrap">电子邮箱：</th>
-                    <td>
-                        <input name="email" id="email" class="TEXT" style="width: 200px;" type="text">
-                        <span id="bbb" ></span>
-                    </td>
-                </tr>
-                <tr id="mor">
-                    <th>学院</th>
-                    <td>
-                        <input name="mor" id="mor" class="TEXT" style="width: 200px;" type="text">
-                    </td>
-                </tr>
-                <tr id="tr_gender">
-                    <th>性别：</th>
-                    <td>
-                        <input name="gender" value="1" id="gender_1" type="radio"><label for="gender_1">男</label>&nbsp;&nbsp;&nbsp;
-                        <input name="gender" value="2" id="gender_2" type="radio"><label for="gender_2">女</label>
-                        <span class="gender_msg">请选择性别</span>
-                    </td>
-                </tr>
-                <tr class="buttons">
-                    <th>&nbsp;</th>
-                    <td style="padding: 20px 0pt;">
-                        <input value=" 提交 " class="BUTTON SUBMIT" type="submit">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+        <a href="teacher/t_test" style="margin: 10px 0 15px 650px;display: block">返回-></a>
+        <div id="test" style="width: 600px;margin: 30px 100px;">
+            <h3>操作系统</h3>
+            <p>2017.01.22-2017.02.16</p>
+            <p style="text-indent: 28px">根据学生的学习情况进行监督，例如在课程进1/5处设置多个触发提醒，若学生在线学习时长小于3小时 || 作业未完成 || 未按时提交作业 ，教师均可以一键提醒，督促学生学习
+                ⑤成绩录入模块
+                将学生的考试成绩和平时成绩结合，给出学生最终得分。并生成可视化图表
+            </p>
+            <a href="teacher/t_change_test" style="margin: 10px 0 15px 560px;display: block">修改</a>
+        </div>
+
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
@@ -150,5 +121,4 @@
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>

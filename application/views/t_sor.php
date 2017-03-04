@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+    <link href="assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+    <script src="assets/js/star-rating.js" type="text/javascript"></script>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/echarts.min.js"></script>
 </head>
 <body data-type="index">
@@ -103,46 +107,18 @@
         </div>
     </div>
     <div class="tpl-content-wrapper">
-        <form id="frm_reg" action="welcome/dot_itro" method="POST" style="float:left; width:620px;">
-           <table cellpadding="0" cellspacing="0">
-                <tbody>
-                <tr>
-                    <th>姓名：</th>
-                    <td><input name="username" id="username" maxlength="20" class="TEXT" style="width: 150px;"
-                               type="text">
-                        <span id="name_msg">请使用真实姓名</span>
-                    </td>
-                </tr>
-                <tr id="tr_email">
-                    <th nowrap="nowrap">电子邮箱：</th>
-                    <td>
-                        <input name="email" id="email" class="TEXT" style="width: 200px;" type="text">
-                        <span id="bbb" ></span>
-                    </td>
-                </tr>
-                <tr id="mor">
-                    <th>学院</th>
-                    <td>
-                        <input name="mor" id="mor" class="TEXT" style="width: 200px;" type="text">
-                    </td>
-                </tr>
-                <tr id="tr_gender">
-                    <th>性别：</th>
-                    <td>
-                        <input name="gender" value="1" id="gender_1" type="radio"><label for="gender_1">男</label>&nbsp;&nbsp;&nbsp;
-                        <input name="gender" value="2" id="gender_2" type="radio"><label for="gender_2">女</label>
-                        <span class="gender_msg">请选择性别</span>
-                    </td>
-                </tr>
-                <tr class="buttons">
-                    <th>&nbsp;</th>
-                    <td style="padding: 20px 0pt;">
-                        <input value=" 提交 " class="BUTTON SUBMIT" type="submit">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+        <h3 style="font-size: 20px;margin: 30px 0 15px 150px">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;账号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平时成绩&nbsp;&nbsp;
+            考试成绩</h3>
+        <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
+            <tr>
+                <th>张三</th>
+                <th>10000000000</th>
+                <th>80</th>
+                <th>80</th>
+            </tr>
+        </table>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
@@ -150,5 +126,4 @@
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
-
 </html>
