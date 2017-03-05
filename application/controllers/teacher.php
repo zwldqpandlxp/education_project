@@ -45,12 +45,15 @@ class Teacher extends CI_Controller{
             'results'=>$results
         ));
     }
-    public function add_stu(){
-        $user_id=$this -> session -> userdata('logindata')->user_Id;
-        $name=$this->input->post('name');
+    public function del_stu(){
+        $stu_name=$this->input->get('name');
         $this->load->model('teacher_model');
-        $row=$this->teacher_model->get_stu_by_stu_id($name);
-
+        $row=$this->teacher_model->del_stu($stu_name);
+        if($row>0){
+            redirect('teacher/t_stu_information');
+        }else{
+            echo 'erro';
+        }
     }
 
     public function t_introduce()
@@ -67,7 +70,12 @@ class Teacher extends CI_Controller{
         ));
     }
     public function t_see_test(){
-        $this->load->view('t_see_test');
+        $home_id=$this->input->get('course');
+        $this->load->model('teacher_model');
+        $result=$this->teacher_model->get_home_by_home_id($home_id);
+        $this->load->view('t_see_test',array(
+            'result'=>$result
+        ));
     }
     public function t_add_test(){
         $this->load->view('t_add_test');
@@ -88,7 +96,12 @@ class Teacher extends CI_Controller{
         }
     }
     public function t_change_test(){
-        $this->load->view('t_change_test');
+        $home_id=$this->input->get('home');
+        $this->load->model('teacher_model');
+        $result=$this->teacher_model->get_home_by_home_id($home_id);
+        $this->load->view('t_change_test',array(
+            'result'=>$result
+        ));
     }
     public function t_lesson(){
         $user_id=$this -> session -> userdata('logindata')->user_Id;
@@ -101,12 +114,19 @@ class Teacher extends CI_Controller{
     public function t_up_lesson(){
         $this->load->view('t_up_lesson');
     }
+
+
     public function t_up(){
+        $class_name = $this->input->post('class');
+        $file_name=$this->input->post('vdio');
+        $this->load->model('teacher_model');
+        $class_id=$this->teacher_model->get_couser_id_by_course($class_name);
+        error_reporting(E_ALL ^ E_NOTICE);
         $filePath='assets/file/';
         if(!is_dir($filePath)){
             mkdir($filePath);
         }
-        $type=array("txt","xlsx");
+        $type=array("txt","xlsx","mp4");
         in_array((strtolower(substr(strchr($_FILES['file']['name'],'.'),1))),$type);
         $filename=implode('.',$type);
         $filename=time();
@@ -114,10 +134,16 @@ class Teacher extends CI_Controller{
         if(file_exists($filePath)){
             $bool=move_uploaded_file($_FILES['file']['tmp_name'],$filePath.$_FILES['file']['name']);
             if($bool){
-                $str='上传成功';
-                $this->load->view('t_up_lesson1',array(
-                    'str' => $str
-                ));
+                $row=$this->teacher_model->save_file($filePath.$_FILES['file']['name'],$file_name,$class_id->cour_Id,$class_name);
+                if($row>0){
+                    $str='上传成功';
+                    $this->load->view('t_up_lesson1',array(
+                        'str' => $str
+                    ));
+                }else{
+                    echo 'erro';
+
+                }
             }else{
                 echo 'no';
             }
@@ -137,4 +163,30 @@ class Teacher extends CI_Controller{
     public function t_insert_sor(){
         $this->load->view('t_insert_sor');
     }
+    public function t_class_controllar(){
+        $this->load->view('t_class_controllar');
+    }
+    public function video_begin(){
+        $course_id=$this->input->get('course');
+        $this->load->model('teacher_model');
+        $results=$this->teacher_model->get_vido_by_cour_id($course_id);
+        $this->load->view('t_course_test',array(
+            'results'=>$results
+        ));
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

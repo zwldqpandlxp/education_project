@@ -11,12 +11,9 @@
                 </a>
             </li>
             <li class="tpl-left-nav-item">
-                <a href="welcome/chart" class="nav-link tpl-left-nav-link-list active">
+                <a href="teacher/t_lesson" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-bar-chart"></i>
                     <span>我的资源</span>
-                    <i class="tpl-left-nav-content tpl-badge-danger">
-                        12
-                    </i>
                 </a>
             </li>
 
@@ -32,7 +29,7 @@
                             <i class="am-icon-angle-right"></i>
                             <span>学生管理</span>
                         </a>
-                        <a href="form-news.html">
+                        <a href="teacher/t_class_controllar">
                             <i class="am-icon-angle-right"></i>
                             <span>课程管理</span>
                         </a>
@@ -40,9 +37,9 @@
                             <i class="am-icon-angle-right"></i>
                             <span>作业管理</span>
                         </a>
-                        <a href="form-news-list.html">
+                        <a href="teacher/t_test">
                             <i class="am-icon-angle-right"></i>
-                            <span>成绩管理</span>
+                            <span>考试管理</span>
                         </a>
                     </li>
                 </ul>
@@ -56,14 +53,9 @@
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
                     <li>
-                        <a href="teacher/t_view_evaluation">
+                        <a href="teacher/t_choose_stu">
                             <i class="am-icon-angle-right"></i>
                             <span>学生评价</span>
-                        </a>
-
-                        <a href="form-line.html">
-                            <i class="am-icon-angle-right"></i>
-                            <span>学习评价</span>
                         </a>
                     </li>
                 </ul>
