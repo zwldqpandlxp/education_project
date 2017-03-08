@@ -22,98 +22,16 @@
 <body data-type="index">
 <?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <div class="tpl-left-nav tpl-left-nav-hover">
-        <div class="tpl-left-nav-title">
-            在线教育系统列表
-        </div>
-        <div class="tpl-left-nav-list">
-            <ul class="tpl-left-nav-menu">
-                <li class="tpl-left-nav-item">
-                    <a href="teacher/t_index" class="nav-link">
-                        <i class="am-icon-home"></i>
-                        <span>首页</span>
-                    </a>
-                </li>
-                <li class="tpl-left-nav-item">
-                    <a href="teacher/t_lesson" class="nav-link tpl-left-nav-link-list active">
-                        <i class="am-icon-bar-chart"></i>
-                        <span>我的资源</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">
-                            12
-                        </i>
-                    </a>
-                </li>
-
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-table"></i>
-                        <span>教学管理</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <li>
-                            <a href="teacher/t_stu_information">
-                                <i class="am-icon-angle-right"></i>
-                                <span>学生管理</span>
-                            </a>
-                            <a href="teacher/t_test">
-                                <i class="am-icon-angle-right"></i>
-                                <span>课程管理</span>
-                            </a>
-                            <a href="form-news-list.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>作业管理</span>
-                            </a>
-                            <a href="form-news-list.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>成绩管理</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-wpforms"></i>
-                        <span>我的评价</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <li>
-                            <a href="teacher/t_choose_stu">
-                                <i class="am-icon-angle-right"></i>
-                                <span>学生评价</span>
-                            </a>
-
-                            <a href="form-line.html">
-                                <i class="am-icon-angle-right"></i>
-                                <span>学习评价</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="tpl-left-nav-item">
-                    <a href="teacher/t_introduce" class="nav-link tpl-left-nav-link-list">
-                        <i class="am-icon-key"></i>
-                        <span>完善信息</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include"t_nav.php" ?>
     <div class="tpl-content-wrapper">
         <a href="teacher/t_test" style="margin: 10px 0 15px 650px;display: block">返回-></a>
         <div id="test" style="width: 600px;margin: 30px 100px;">
-            <h3>操作系统</h3>
-            <p>2017.01.22-2017.02.16</p>
-            <p style="text-indent: 28px">根据学生的学习情况进行监督，例如在课程进1/5处设置多个触发提醒，若学生在线学习时长小于3小时 || 作业未完成 || 未按时提交作业 ，教师均可以一键提醒，督促学生学习
-                ⑤成绩录入模块
-                将学生的考试成绩和平时成绩结合，给出学生最终得分。并生成可视化图表
+            <h3><?php echo $result->home_Name;?></h3>
+            <p><?php echo $result->home_Start;?>-<?php echo $result->home_End;?></p>
+            <p style="text-indent: 28px"><?php echo $result->home_content;?>
             </p>
-            <a href="teacher/t_change_test" style="margin: 10px 0 15px 560px;display: block">修改</a>
+            <a href="teacher/t_change_test?home=<?php echo $result->home_Id;?>" style="margin: 10px 0 15px 560px;display: block">修改</a>
         </div>
-
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

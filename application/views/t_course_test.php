@@ -17,21 +17,19 @@
     <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/echarts.min.js"></script>
-    <!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
     <style>
         .lesson{
-            width: 25%;
-            height: 300px;
+            width: 23%;
+            height: 330px;
             border:1px solid;
             float: left;
-            margin-right:10px;
+            margin-left:13px;
             margin-bottom:10px;
             text-align: center;
         }
         .lesson img{
-            margin:0 5%;
-            height: 250px;
+            margin:10px 5% 0 ;
+            height: 240px;
             width: 90%;
         }
     </style>
@@ -41,24 +39,18 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
-        <div class="lesson-container" style="width: 80%; margin: 0 auto">
-            <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li><a href="teacher/t_lesson">已上传的课程</a></li>
-                <li class="am-active"><a href="javascript:;">上传课程</a></li>
-            </ul>
-            <form action="teacher/t_up" method="post" enctype="multipart/form-data">
-                <input type="text" placeholder="请输入课程名称" name="class">
-                <input type="text" placeholder="请输入视频名称" name="vdio">
-                <input type="file" name="file" style="margin: 30px 0;width: 200px">
-                <input type="submit" value="提交" name="sub">
-                <span><?php echo $str ?></span>
-            </form>
-        </div>
+        <video width="320" height="240" controls="controls" >
+            <?php foreach($results as $result) {?>
+                    <source src="<?php echo $result->file_Url?>" type="video/mp4" />
+            <?php }?>
+        </video>
     </div>
+
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
+
 </html>
