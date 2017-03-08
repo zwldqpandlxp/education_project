@@ -211,6 +211,62 @@ class Teacher extends CI_Controller{
         $this->load->model('teacher_model');
         $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
         $results=$this->teacher_model->get_exam_by_teac($teac_id->teac_Id);
+        if($results){
+            $this->load->view('t_exam',array(
+                'results'=>$results
+            ));
+        }
+    }
+    public function t_add_exam(){
+        $this->load->view('t_add_exam');
+    }
+    public function t_add_exam1(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $exam_name=$this->input->post('name');
+        $cour_name=$this->input->post('course');
+        $time=$this->input->post('data');
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $cour_id=$this->teacher_model->get_couser_id_by_course($cour_name);
+        $row=$this->teacher_model->save_add_exam($exam_name,$cour_id->cour_Id,$teac_id->teac_Id,$time);
+        if($row>0){
+            $result=$this->teacher_model->get_exam($exam_name,$teac_id->teac_Id,$cour_id->cour_Id);
+            $this->load->view('t_add_ti',array(
+                'result'=>$result
+            ));
+        }
+    }
+    public function t_add_ti(){
+        $content=$this->input->post('content');
+        $cour_id=$this->input->post('course');
+        $this->load->model('teacher_model');
+        $row=$this->teacher_model->save_ti($cour_id,$content);
+        if($row){
+            $this->load->view('t_add_t1',array(
+                'result'=>$cour_id
+            ));
+        }
+    }
+    public function t_add_t1(){
+        $content=$this->input->post('content');
+        $cour_id=$this->input->post('course');
+        $this->load->model('teacher_model');
+        $row=$this->teacher_model->save_ti($cour_id,$content);
+        if($row){
+            $this->load->view('t_add_t1',array(
+                'result'=>$cour_id
+            ));
+        }
+    }
+    public function check_exam(){
+        $exam_id=$this->input->get('exam');
+        $this->load->model('teacher_model');
+        $resluts=$this->teacher_model->get_exam_by_exam_id($exam_id);
+        if($resluts>0){
+            $this->load->view('t_check_exam',array(
+                'results'=>$resluts
+        ));
+        }
 
     }
 }

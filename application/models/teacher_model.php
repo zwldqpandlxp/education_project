@@ -30,7 +30,7 @@ class Teacher_model extends CI_Model{
         $this->db->insert('edu_homework',array(
             'home_Id'=>null,
             'home_Name'=>$name,
-            'home_content'=>$content,
+            'home_Content'=>$content,
             'home_Start'=>$start,
             'home_End'=>$data,
             'teac_Id'=>$user_id,
@@ -105,6 +105,52 @@ class Teacher_model extends CI_Model{
         return $this->db->affected_rows();
     }
     public function get_exam_by_teac($teac_id){
-        $sql="select e.*,c.cour_Name from edu_exam e,edu_course c where e.teac_Id";
+        $sql="select e.*,c.cour_Name from edu_exam e,edu_course c where e.teac_Id = $teac_id and c.cour_Id=e.cour_Id";
+        return $this->db->query($sql)->result();
+    }
+    public function save_add_exam($exam_name,$cour_id,$teac_id,$time){
+        $this->db->insert('edu_exam',array(
+            'exam_Id'=> null,
+            'exam_Name'=>$exam_name,
+            'cour_Id'=>$cour_id,
+            'teac_Id'=>$teac_id,
+            'exam_Time'=>$time
+        ));
+        return $this->db->affected_rows();
+    }
+    public function get_exam($exam_name,$teac_id,$cour_id){
+        $sql="select * from edu_exam where exam_Name= '$exam_name' and teac_Id = $teac_id and cour_Id = $cour_id";
+        return $this->db->query($sql)->row();
+    }
+    public function save_ti($cour_id,$content){
+        $this->db->insert('edu_exam_content',array(
+            'exco_Id'=> null,
+            'exam_Id'=>$cour_id,
+            'exco_Content'=>$content
+        ));
+        return $this->db->affected_rows();
+    }
+    public function get_exam_by_exam_id($exam_id){
+        $sql="select * from edu_exam_content where exam_Id = $exam_id";
+        return $this->db->query($sql)->result();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

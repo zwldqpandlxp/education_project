@@ -28,19 +28,21 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
-        <h3 style="font-size: 20px;margin: 30px 0 15px 150px"> &nbsp;姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;账号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            综合成绩</h3>
+        <a href="teacher/t_add_exam" style="margin-left:680px">添加考试+</a>
+        <h3 style="font-size: 20px;margin: 30px 0 15px 150px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;考试&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科目
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            日期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            操作</h3>
         <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
+            <?php foreach($results as $result ){?>
             <tr>
-                <th>张三</th>
-                <th>10000000000</th>
-                <th>123123123@qq.com</th>
-                <th>80</th>
+                <th><?php echo $result->exam_Name?></th>
+                <th><?php echo $result->cour_Name?></th>
+                <th><?php echo $result->exam_Time?></th>
+                <th><a href="teacher/check_exam?exam=<?php echo $result->exam_Id?>">查看</a>|<a href="">删除</a></th>
             </tr>
+            <?php }?>
         </table>
     </div>
 </div>
