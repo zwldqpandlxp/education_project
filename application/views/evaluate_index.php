@@ -31,7 +31,17 @@
             </thead>
             <tbody>
             <tr class="info">
-                <th>按时完成作业：</th>
+                <th>课堂质量：</th>
+                <th>
+                    <div>
+                        <div id="star1"></div>
+                        <div id="result1"></div>
+                        <span id="jg1"></span>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>教学任务完成情况：</th>
                 <th>
                     <div>
                         <div id="star2"></div>
@@ -41,7 +51,7 @@
                 </th>
             </tr>
             <tr>
-                <th>作业成绩：</th>
+                <th>回答问题：</th>
                 <th>
                     <div>
                         <div id="star3"></div>
@@ -50,19 +60,20 @@
                     </div>
                 </th>
             </tr>
+
             <tr class="info">
-                <th>学习时间：</th>
+                <th>教学态度：</th>
                 <th>
                     <div>
-                        <div id="star1"></div>
-                        <div id="result1"></div>
-                        <span id="jg1"></span>
+                        <div id="star4"></div>
+                        <div id="result4"></div>
+                        <span id="jg4"></span>
                     </div>
                 </th>
             </tr>
             </tbody>
         </table>
-        <button type="button" class="btn btn-success" style="position: absolute; left: 90%;">确认提交</button>
+        <a href="student/do_evaluate" class="btn btn-success" id="submit">确认提交</a>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
@@ -71,12 +82,10 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/jquery.raty.js"></script>
 <script>
-    $(window).load(function () {
-        $('#location').trigger('click');
-    });
     rat('star1','result1',1,'jg1');
     rat('star2','result2',1,'jg2');
-    rat('star3','result3',10,'jg3');
+    rat('star3','result3',1,'jg3');
+    rat('star4','result4',1,'jg4');
     function rat(star,result,m,jg){
 
         star= '#' + star;
@@ -96,10 +105,22 @@
             targetKeep : true,//targetKeep 属性设置为true，用户的选择值才会被保持在目标DIV中，否则只是鼠标悬停时有值，而鼠标离开后这个值就会消失
             click: function (score, evt) {
 //			alert('你的评分是'+score*m+'分');
-                $(jg).html('你的评分是'+score*m+'分');
+                $(jg).html(score*m);
             }
         });
     }
+    $submit = $('#submit');
+    var localurl = window.location.href;
+    var arr = localurl.split('?')[1].split('=');
+    $submit.on('click', function () {
+        var str_jg1 = $('#jg1').html();
+        var str_jg2 = $('#jg2').html();
+        var str_jg3 = $('#jg3').html();
+        var str_jg4 = $('#jg4').html();
+        var url = "student/do_evaluate?" + arr[0] + "=" + arr[1] + "&lesson=" + str_jg1 +
+            "&task=" + str_jg2 + "&answer=" + str_jg3 + "&behaviour=" + str_jg4;
+        $submit.attr('href', url);
+    })
 </script>
 </body>
 </html>

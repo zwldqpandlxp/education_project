@@ -21,80 +21,7 @@
 <body data-type="index">
 <?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <div class="tpl-left-nav tpl-left-nav-hover">
-        <div class="tpl-left-nav-title">
-            Amaze UI 列表
-        </div>
-        <div class="tpl-left-nav-list">
-            <ul class="tpl-left-nav-menu">
-                <li class="tpl-left-nav-item">
-                    <a href="student/index" class="nav-link subnav">
-                        <i class="am-icon-home"></i>
-                        <span>首页</span>
-                    </a>
-                </li>
-                <li class="tpl-left-nav-item">
-                    <a href="student/lesson" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-bar-chart"></i>
-                        <span>我的课程</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">
-                            12
-                        </i>
-                    </a>
-                </li>
-
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-table"></i>
-                        <span>选课中心</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <li>
-                            <a href="table-font-list.html" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>猜你喜欢</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                            </a>
-                            <a href="table-images-list.html" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>选课中心</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav" id="location" >
-                        <i class="am-icon-wpforms"></i>
-                        <span>教师评价</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <li>
-                            <a href="student/evaluate" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>开始评价</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                            </a>
-                            <a href="student/view_evaluate" class="subnav active">
-                                <i class="am-icon-angle-right"></i>
-                                <span>查看评价</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="tpl-left-nav-item">
-                    <a href="student/introduce" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-key"></i>
-                        <span>完善信息</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php include "nav.php"?>
     <div class="tpl-content-wrapper">
         <div class="a" style="height:400px; margin: 30px auto;"></div>
     </div>
@@ -127,7 +54,15 @@
         },
         xAxis: [{
             type: 'category',
-            data: ['墨渊', '夜华', '白浅', '折颜', '帝君']
+            data: [<?php $sum=0?>
+                <?php foreach ($res as $key => $value){?>
+                <?php ++$sum?>
+                <?php echo "'"?>
+                <?php echo $value['teac_Name']?>
+                <?php echo "'"?>
+                <?php if($sum < $count){?>
+                <?php echo ","?>
+                <?php }}?>]
         }],
         yAxis: [{
             type: 'value',
@@ -137,25 +72,45 @@
             }
         }],
         series: [{
+            name: '课堂质量',
+            type: 'bar',
+            data: [<?php $sum=0?>
+                <?php foreach ($res as $key => $value){?>
+                <?php ++$sum?>
+                <?php echo $value['evte_Lesson']/$value['num']?>
+                <?php if($sum < $count){?>
+                <?php echo ","?>
+                <?php }}?>]
+        }, {
+            name: '教学任务完成情况',
+            type: 'bar',
+            data: [<?php $sum=0?>
+                <?php foreach ($res as $key => $value){?>
+                <?php ++$sum?>
+                <?php echo $value['evte_Task']/$value['num']?>
+                <?php if($sum < $count){?>
+                <?php echo ","?>
+                <?php }}?>]
+        }, {
+            name: '回答问题',
+            type: 'bar',
+            data: [<?php $sum=0?>
+                <?php foreach ($res as $key => $value){?>
+                <?php ++$sum?>
+                <?php echo $value['evte_Answer']/$value['num']?>
+                <?php if($sum < $count){?>
+                <?php echo ","?>
+                <?php }}?>]
+        }, {
             name: '教学态度',
             type: 'bar',
-            data: [20, 12, 31, 34, 31]
-        }, {
-            name: '备课情况',
-            type: 'bar',
-            data: [10, 20, 5, 9, 3]
-        }, {
-            name: '作业批改情况',
-            type: 'bar',
-            data: [1, 1, 2, 3, 1]
-        }, {
-            name: '与学生互动情况',
-            type: 'bar',
-            data: [0.1, 2, 3, 1, 0.5]
-        }, {
-            name: '言行举止',
-            type: 'bar',
-            data: [0.1, 2, 3, 1, 0.5]
+            data: [<?php $sum=0?>
+                <?php foreach ($res as $key => $value){?>
+                <?php ++$sum?>
+                <?php echo $value['evte_Behaviour']/$value['num']?>
+                <?php if($sum < $count){?>
+                <?php echo ","?>
+                <?php }}?>]
         }]
     };
     var $e=$('.a');
