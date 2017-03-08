@@ -32,15 +32,21 @@ class Student extends CI_Controller {
         $this->load->view('reg');
     }
     public function introduce(){
-
         $this->load->view('introduce');
     }
     public function lesson(){
-
-        $this->load->view('lesson');
+        $student = $this -> session -> userdata('student');
+        $res = $this->course_model->get_course($student -> stud_Id, 1);
+        $this->load->view('lesson', array(
+            'res' => $res
+        ));
     }
     public function lessoned(){
-        $this->load->view('lessoned');
+        $student = $this -> session -> userdata('student');
+        $res = $this->course_model->get_course($student -> stud_Id, 0);
+        $this->load->view('lessoned', array(
+            'res' => $res
+        ));
     }
     public function evaluate()
     {

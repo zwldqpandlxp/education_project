@@ -46,22 +46,12 @@
                 <li><a href="student/lessoned">已完成</a></li>
             </ul>
             <div class="lesson-content">
+                <?php foreach ($res as $value){?>
                 <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
+                    <img src="<?php echo $value -> pict_Url?>" alt="<?php echo $value -> cour_Name?>">
+                    <p><?php echo $value -> cour_Name?>，学分:<?php echo $value -> cour_Credit?></p>
                 </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
-                <div class="lesson">
-                    <img src="" alt="中华古诗词">
-                    <p>中华古诗词，授课教师:XXX</p>
-                </div>
+                <?php }?>
             </div>
         </div>
     </div>
