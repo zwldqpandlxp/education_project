@@ -39,11 +39,11 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
+        <?php foreach($results as $result) {?>
         <video width="320" height="240" controls="controls" >
-            <?php foreach($results as $result) {?>
                     <source src="<?php echo $result->file_Url?>" type="video/mp4" />
-            <?php }?>
         </video>
+        <?php }?>
     </div>
 
 </div>

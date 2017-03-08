@@ -37,7 +37,7 @@
                             <i class="am-icon-angle-right"></i>
                             <span>作业管理</span>
                         </a>
-                        <a href="teacher/t_test">
+                        <a href="teacher/t_exam">
                             <i class="am-icon-angle-right"></i>
                             <span>考试管理</span>
                         </a>

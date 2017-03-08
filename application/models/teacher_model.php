@@ -23,7 +23,7 @@ class Teacher_model extends CI_Model{
         return $this->db->query($sql)->result();
     }
     public function get_stu_by_tea_id($tea_id){
-        $sql="select s.* ,u.user_Name from edu_select_course c,edu_student s,edu_user u where c.teac_Id= $tea_id and c.stud_Id = s.stud_Id and u.user_Id=s.user_Id";
+        $sql="select s.* ,u.user_Name,e.cour_Name from edu_course e,edu_select_course c,edu_student s,edu_user u where c.teac_Id= $tea_id and c.stud_Id = s.stud_Id and u.user_Id=s.user_Id and e.cour_Id=c.cour_Id";
         return $this->db->query($sql)->result();
     }
     public function save_test_by_tea_id($user_id,$name,$content,$data,$course_id,$start){
@@ -81,5 +81,30 @@ class Teacher_model extends CI_Model{
     public function get_home_by_home_id($home_id){
         $sql="select * from edu_homework where home_Id=$home_id";
         return $this->db->query($sql)->row();
+    }
+    public function save_couser($class,$time,$xf,$ms){
+        $this->db->insert('edu_course',array(
+            'cour_Id'=> null,
+            'cour_Name'=>$class,
+            'cour_Credit'=>$xf,
+            'cour_Class'=>$time,
+            'cour_Desc'=>$ms,
+            'pict_Id'=>2
+        ));
+        return $this->db->affected_rows();
+    }
+    public function save_atrr($test,$time,$gread,$stu,$teac_Id){
+        $this->db->insert('edu_evaluate_student',array(
+            'evst_Id'=> null,
+            'stud_Id'=>$stu,
+            'evst_Attitude'=>$test,
+            'evst_Examination'=>$gread,
+            'evst_Status'=>$time,
+            'teac_Id'=>$teac_Id
+        ));
+        return $this->db->affected_rows();
+    }
+    public function get_exam_by_teac($teac_id){
+        $sql="select e.*,c.cour_Name from edu_exam e,edu_course c where e.teac_Id";
     }
 }

@@ -32,9 +32,24 @@ class Teacher extends CI_Controller{
     }
     public function t_view_evaluation()
     {
-        $this->load->view('t_view_evaluation');
+        $stu_id=$this->input->get('stu');
+        $this->load->view('t_view_evaluation',array(
+            'stu_id'=>$stu_id
+        ));
     }
-
+    public function t_view_e(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $time=$this->input->post('time');
+        $gread=$this->input->post('gread');
+        $test=$this->input->post('test');
+        $stu_id=$this->input->post('stu');
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $row=$this->teacher_model->save_atrr($test,$time,$gread,$stu_id,$teac_id->teac_Id);
+        if($row>0){
+            redirect('teacher/t_view_evaluation');
+        }
+    }
     public function t_stu_information()
     {
         $user_id=$this -> session -> userdata('logindata')->user_Id;
@@ -115,7 +130,6 @@ class Teacher extends CI_Controller{
         $this->load->view('t_up_lesson');
     }
 
-
     public function t_up(){
         $class_name = $this->input->post('class');
         $file_name=$this->input->post('vdio');
@@ -155,16 +169,19 @@ class Teacher extends CI_Controller{
         $this->load->view('t_up_lesson1');
     }
     public function t_choose_stu(){
-        $this->load->view('t_choose_stu');
-    }
-    public function t_sor(){
-        $this->load->view('t_sor');
-    }
-    public function t_insert_sor(){
-        $this->load->view('t_insert_sor');
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $results=$this->teacher_model->get_stu_by_tea_id($teac_id->teac_Id);
+        $this->load->view('t_choose_stu',array(
+            'results'=> $results
+        ));
     }
     public function t_class_controllar(){
         $this->load->view('t_class_controllar');
+    }
+    public function t_class_controllar1(){
+        $this->load->view('t_class_controllar1');
     }
     public function video_begin(){
         $course_id=$this->input->get('course');
@@ -173,6 +190,28 @@ class Teacher extends CI_Controller{
         $this->load->view('t_course_test',array(
             'results'=>$results
         ));
+    }
+    public function t_gread(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $class=$this->input->post('class');
+        $time=$this->input->post('time');
+        $xf=$this->input->post('xf');
+        $ms=$this->input->post('ms');
+        $this->load->model('teacher_model');
+        $results=$this->teacher_model->save_couser($class,$time,$xf,$ms,$user_id);
+        if($results>0){
+            redirect('teacher/t_class_controllar1');
+        }
+    }
+    public function t_sor(){
+        $this->load->view('t_sor');
+    }
+    public function t_exam(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $results=$this->teacher_model->get_exam_by_teac($teac_id->teac_Id);
+
     }
 }
 

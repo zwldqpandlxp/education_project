@@ -26,7 +26,8 @@
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
         <div style="width: 90%; margin: 10px auto;">
-            <input type="hidden" value="">
+            <form action="teacher/t_view_e" method="post">
+            <input name="stu" type="hidden" value="<?php echo $stu_id?>">
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -36,12 +37,12 @@
                 </thead>
                 <tbody>
                 <tr class="info">
-                    <th>按时完成作业：</th>
+                    <th>学习态度：</th>
                     <th>
                         <div>
                             <div id="star2"></div>
                             <div id="result2"></div>
-                            <span id="jg2"></span>
+                            <span id="jg2"><input type="hidden" name="test"></span>
                         </div>
                     </th>
                 </tr>
@@ -51,23 +52,24 @@
                         <div>
                             <div id="star3"></div>
                             <div id="result3"></div>
-                            <span id="jg3"></span>
+                            <span id="jg3"><input type="hidden" name="gread"></span>
                         </div>
                     </th>
                 </tr>
                 <tr class="info">
-                    <th>学习时间：</th>
+                    <th>听课状况：</th>
                     <th>
                         <div>
                             <div id="star1"></div>
                             <div id="result1"></div>
-                            <span id="jg1"></span>
+                            <span id="jg1"><input type="hidden" name="time"></span>
                         </div>
                     </th>
                 </tr>
                 </tbody>
             </table>
-            <button type="button" class="btn btn-success" style="position: absolute; left: 90%;">确认提交</button>
+            <input type="submit" class="btn btn-success" style="position: absolute; left: 90%;" value="确认提交">
+                </form>
         </div>
     </div>
 </div>
@@ -101,10 +103,11 @@
             target: result,
             targetKeep : true,//targetKeep 属性设置为true，用户的选择值才会被保持在目标DIV中，否则只是鼠标悬停时有值，而鼠标离开后这个值就会消失
             click: function (score, evt) {
-                $(jg).html('你的评分是'+score*m+'分');
-                $.get("teacher/t_pinglun?id="+id,function(data,status){
-                    alert("Data: " + data + "\nStatus: " + status);
-                });
+                $(jg).html($(jg).html()+'你的评分是'+score*m+'分');
+                $(jg).children('input').val(score*m);
+//                $.get("teacher/t_pinglun?id="+id,function(data,status){
+//                    alert("Data: " + data + "\nStatus: " + status);
+//                });
             }
         });
 

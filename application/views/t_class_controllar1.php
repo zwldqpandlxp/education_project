@@ -46,13 +46,10 @@
     <div class="tpl-content-wrapper">
         <div class="lesson-container" style="width: 80%; margin: 0 auto">
             <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li class="am-active"><a href="javascript:;">添加课程</a></li>
+                <li class="am-active"><a href="javascript:;">已有课程</a></li>
             </ul>
             <div class="lesson-content">
-<!--                <h3 style="font-size: 23px;margin: 30px 0 15px 150px">课程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--                    &nbsp;课时长度&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;成绩计算 &nbsp;&nbsp;&nbsp;&nbsp; 考试</h3>-->
+                <h3>提交成功!</h3>
                 <form action="teacher/t_gread" method="post">
                     <table class="table table-striped" style="width: 100%;margin: 0 auto">
                         <tr>
@@ -74,7 +71,6 @@
             </div>
         </div>
     </div>
-
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
