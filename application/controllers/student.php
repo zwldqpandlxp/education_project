@@ -253,4 +253,11 @@ class Student extends CI_Controller {
             'count' => $count
         ));
     }
+    public function course_test(){
+        $cid = $this -> input -> get('id');
+        $video = $this -> student_model -> get_file_by_cid($cid);
+        $this -> load -> view('course_test',array(
+            'video' => $video
+        ));
+    }
 }

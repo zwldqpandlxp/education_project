@@ -50,7 +50,7 @@
             <div class="lesson-content">
                 <div class="lesson">
                     <img src="" alt="<?php echo $value->cour_Name?>">
-                    <p><?php echo $value->cour_Name?></p>
+                    <p><a href="student/course_test?id=<?php echo $value->cour_Id?>"><?php echo $value->cour_Name?></a></p>
                 </div>
             </div>
             <?php }}?>

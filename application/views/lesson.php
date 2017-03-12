@@ -49,7 +49,7 @@
                 <?php foreach ($res as $value){?>
                 <div class="lesson">
                     <img src="<?php echo $value -> pict_Url?>" alt="<?php echo $value -> cour_Name?>">
-                    <p><?php echo $value -> cour_Name?>，学分:<?php echo $value -> cour_Credit?></p>
+                    <p><a href="student/course_test?id=<?php echo $value -> cour_Id?>"><?php echo $value -> cour_Name?>，学分:<?php echo $value -> cour_Credit?></a></p>
                 </div>
                 <?php }?>
             </div>

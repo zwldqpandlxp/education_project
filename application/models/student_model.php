@@ -83,4 +83,8 @@ class Student_model extends CI_Model {
         $sql="select * from edu_course c where c.cour_Id = $cid";
         return $this -> db -> query($sql) -> row();
     }
+    public function get_file_by_cid($cid){
+        $sql="select * from edu_file f where f.cour_Id = $cid";
+        return $this -> db -> query($sql) -> result();
+    }
 }
