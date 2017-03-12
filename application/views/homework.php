@@ -29,34 +29,6 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "nav.php"?>
     <div class="tpl-content-wrapper">
-        <table class="am-table am-table-bordered am-table-radius am-table-striped">
-           <thead>
-                <tr>
-                    <th>课程名称</th>
-                    <th>任课教师</th>
-                    <th>课程学分</th>
-                    <th>课程课时</th>
-                    <th>选课</th>
-                </tr>
-           </thead>
-            <tbody>
-                <?php foreach($course as $value){?>
-                <tr>
-                    <td><?php echo $value->cour_Name?></td>
-                    <td><?php echo $value->teac_Name?></td>
-                    <td><?php echo $value->cour_Credit?></td>
-                    <td><?php echo $value->cour_Class?></td>
-                    <td>
-                    <?php if(isset($res[$value -> cour_Id])){ ?>
-                        <a href="student/del_select?id=<?php echo $res[$value -> cour_Id] -> seco_Id?>"><?php echo "退选"?></a>
-                    <?php }else{?>
-                        <a href="student/do_select?id=<?php echo $value -> teco_Id?>"><?php echo "选课"?></a>
-                    <?php }?>
-                    </td>
-                </tr>
-                <?php }?>
-            </tbody>
-        </table>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

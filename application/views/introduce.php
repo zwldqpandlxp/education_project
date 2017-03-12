@@ -30,6 +30,9 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "nav.php"?>
     <div class="tpl-content-wrapper">
+        <?php if(!$student) {?>
+            <p style="text-align: center; color: #f00;"><?php echo "请务必先完善个人信息"?></p>
+        <?php }?>
         <div class="am-g">
             <div class="am-u-md-8 am-u-sm-centered">
                 <form class="am-form" action="student/save_introduce" method="post">

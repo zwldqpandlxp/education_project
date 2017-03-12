@@ -1,6 +1,11 @@
  <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
+    public function __construct()
+    {
+        parent::__construct();
+        $this -> load -> model('user_modol');
+    }
 
  	public function login(){
 		$this->load->view('login');
@@ -38,7 +43,7 @@ class Welcome extends CI_Controller {
         }
     }
 
-    public  function do_reg(){
+    public function do_reg(){
         $username=$this->input->post('username');
         $password=$this->input->post('password');
         if(strlen($username) == 10){

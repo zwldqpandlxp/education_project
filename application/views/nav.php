@@ -14,12 +14,9 @@
                 <a href="student/lesson" class="nav-link tpl-left-nav-link-list subnav">
                     <i class="am-icon-bar-chart"></i>
                     <span>我的课程</span>
-                    <i class="tpl-left-nav-content tpl-badge-danger">
-                        12
-                    </i>
+                    <i class="tpl-left-nav-content tpl-badge-danger"></i>
                 </a>
             </li>
-
             <li class="tpl-left-nav-item">
                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav">
                     <i class="am-icon-table"></i>
@@ -28,7 +25,7 @@
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
                     <li>
-                        <a href="table-font-list.html" class="subnav">
+                        <a href="student/recommend" class="subnav">
                             <i class="am-icon-angle-right"></i>
                             <span>猜你喜欢</span>
                             <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -36,9 +33,7 @@
                         <a href="student/select_course" class="subnav">
                             <i class="am-icon-angle-right"></i>
                             <span>选课中心</span>
-                            <i class="tpl-left-nav-content tpl-badge-success">
-                                18
-                            </i>
+                            <i class="tpl-left-nav-content tpl-badge-success"></i>
                         </a>
                     </li>
                 </ul>

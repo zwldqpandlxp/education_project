@@ -2,7 +2,7 @@
 
 class Major_model extends CI_Model {
     public function get_id_by_name($name){
-        $sql = "select majo_Id from edu_major where majo_Name = $name";
-        $this -> db -> query($sql) -> row();
+        $sql = "select majo_Id from edu_major where majo_Name = '$name'";
+        return $this -> db -> query($sql) -> row();
     }
 }
