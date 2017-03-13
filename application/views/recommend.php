@@ -42,17 +42,18 @@
     <div class="tpl-content-wrapper">
         <div class="lesson-container" style="width: 80%; margin: 0 auto">
             <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li><a href="student/lesson">正在进行</a></li>
-                <li class="am-active"><a href="javascript:;">已完成</a></li>
+                <li class="am-active"><a href="javascript:;">向您推荐的课程</a></li>
             </ul>
+            <?php if($count == 0){?>
+                <h1 style="text-align: center;color: red;padding:10px 0">您尚未选过任何课程，尚无推荐内容</h1>
+            <?php }else{ foreach($res as $value){?>
             <div class="lesson-content">
-                <?php foreach ($res as $value){?>
-                    <div class="lesson">
-                        <img src="<?php echo $value -> pict_Url?>" alt="<?php echo $value -> cour_Name?>">
-                        <p><a href="student/course_test?id=<?php echo $value -> cour_Id?>"><?php echo $value -> cour_Name?>，学分:<?php echo $value -> cour_Credit?></a></p>
-                    </div>
-                <?php }?>
+                <div class="lesson">
+                    <img src="" alt="<?php echo $value->cour_Name?>">
+                    <p><a href="student/course_test?id=<?php echo $value->cour_Id?>"><?php echo $value->cour_Name?></a></p>
+                </div>
             </div>
+            <?php }}?>
         </div>
     </div>
 </div>

@@ -1,3 +1,7 @@
+<?php
+$student = $this -> session -> userdata('student');
+$loginID = $this -> session -> userdata('logindata');
+?>
 <!doctype html>
 <html>
 <head>
@@ -17,86 +21,95 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <style>
+        .tpl-content-wrapper{
+            width: 90%;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body data-type="index">
 <?php include "header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <div class="tpl-left-nav tpl-left-nav-hover">
-        <div class="tpl-left-nav-title">
-            ZN在线教育列表
-        </div>
-        <div class="tpl-left-nav-list">
-            <ul class="tpl-left-nav-menu">
-                <li class="tpl-left-nav-item">
-                    <a href="student/index" class="nav-link subnav active">
-                        <i class="am-icon-home"></i>
-                        <span>首页</span>
-                    </a>
-                </li>
-                <li class="tpl-left-nav-item">
-                    <a href="student/lesson" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-bar-chart"></i>
-                        <span>我的课程</span>
-                        <i class="tpl-left-nav-content tpl-badge-danger">
-                            12
-                        </i>
-                    </a>
-                </li>
+    <?php include "nav.php"?>
+    <div class="tpl-content-wrapper">
+        <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
+            <ul class="am-slides">
+                <li>
+                    <img src="assets/img/nefu1.jpg">
 
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-table"></i>
-                        <span>选课中心</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <li>
-                            <a href="table-font-list.html" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>猜你喜欢</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                            </a>
-                            <a href="table-images-list.html" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>选课中心</span>
-                                <i class="tpl-left-nav-content tpl-badge-success">
-                                    18
-                                </i>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="tpl-left-nav-item">
-                    <a href="javascript:;" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-wpforms"></i>
-                        <span>教师评价</span>
-                        <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                    </a>
-                    <ul class="tpl-left-nav-sub-menu">
-                        <li>
-                            <a href="student/evaluate" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>开始评价</span>
-                                <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                            </a>
-                            <a href="student/view_evaluate" class="subnav">
-                                <i class="am-icon-angle-right"></i>
-                                <span>查看评价</span>
-                            </a>
-                        </li>
-                    </ul>
+                <li>
+                    <img src="assets/img/nefu2.jpg">
+
                 </li>
-                <li class="tpl-left-nav-item">
-                    <a href="student/introduce" class="nav-link tpl-left-nav-link-list subnav">
-                        <i class="am-icon-key"></i>
-                        <span>完善信息</span>
-                    </a>
+                <li>
+                    <img src="assets/img/nefu3.jpg">
+
+                </li>
+                <li>
+                    <img src="assets/img/nefu4.jpg">
+
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="tpl-content-wrapper">
-        我是首页！！！
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+            <!--列表标题-->
+            <div class="am-list-news-hd am-cf">
+                <!--带更多链接-->
+                <h2>近期考试</h2>
+            </div>
+            <div class="am-list-news-bd">
+                <ul class="am-list">
+                    <?php foreach($exam as $value){?>
+                    <li class="am-g am-list-item-desced">
+                        <a href="student/do_exam?id=<?php echo $value->exam_Id?>" class="am-list-item-hd "><?php echo $value->exam_Name?></a>
+                        <div class="am-list-item-text">截止时间：<?php echo $value->exam_Time?></div>
+                    </li>
+                    <?php }?>
+                </ul>
+            </div>
+
+        </div>
+        <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+            <!--列表标题-->
+            <div class="am-list-news-hd am-cf">
+                <!--带更多链接-->
+                <h2>近期作业</h2>
+            </div>
+            <div class="am-list-news-bd">
+                <ul class="am-list">
+                    <?php foreach($homework as $value){?>
+                        <li class="am-g am-list-item-desced">
+                            <a href="student/do_homework?id=<?php echo $value->home_Id?>" class="am-list-item-hd "><?php echo $value->home_Name?></a>
+                            <div class="am-list-item-text"><?php echo $value->home_Content?></div>
+                        </li>
+                    <?php }?>
+                </ul>
+            </div>
+
+        </div>
+        <table class="am-table .am-table-bordered">
+            <thead>
+            <tr>
+                <th>课程名称</th>
+                <th>学分</th>
+                <th>学时</th>
+                <th>成绩</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php $Count = 0?>
+            <?php foreach($courses as $course){ ++$Count?>
+                <tr <?php if($Count % 2) echo 'class="am-primary"'?>>
+                    <td><?php echo $course -> cour_Name?></td>
+                    <td><?php echo $course -> cour_Credit?></td>
+                    <td><?php echo $course -> cour_Class?></td>
+                    <td><?php if(!$course -> seco_Attend) echo $course -> seco_Grade; else echo '正在修读'?></td>
+                </tr>
+            <?php }?>
+            </tbody>
+        </table>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

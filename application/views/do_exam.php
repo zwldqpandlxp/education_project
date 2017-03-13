@@ -17,21 +17,10 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
-    <!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
     <style>
-        .lesson{
-            width: 25%;
-            height: 300px;
-            border:1px solid;
-            float: left;
-            margin-right:10px;
-            margin-bottom:10px;
-            text-align: center;
-        }
-        .lesson img{
-            margin:0 5%;
-            height: 250px;
+        .tpl-content-wrapper{
             width: 90%;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -40,25 +29,28 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "nav.php"?>
     <div class="tpl-content-wrapper">
-        <div class="lesson-container" style="width: 80%; margin: 0 auto">
-            <ul class="am-nav am-nav-pills am-nav-justify" style="height: 60px;">
-                <li><a href="student/lesson">正在进行</a></li>
-                <li class="am-active"><a href="javascript:;">已完成</a></li>
-            </ul>
-            <div class="lesson-content">
-                <?php foreach ($res as $value){?>
-                    <div class="lesson">
-                        <img src="<?php echo $value -> pict_Url?>" alt="<?php echo $value -> cour_Name?>">
-                        <p><a href="student/course_test?id=<?php echo $value -> cour_Id?>"><?php echo $value -> cour_Name?>，学分:<?php echo $value -> cour_Credit?></a></p>
-                    </div>
-                <?php }?>
-            </div>
-        </div>
+        <h1>考试内容</h1>
+        <?php $eid?>
+        <?php foreach($exam as $value){?>
+            <?php $eid = $value->exam_Id?>
+            <h3>考试题目：<?php echo $value->exco_Content?></h3>
+        <?php }?>
+        <form class="am-form" action="student/exam_submit?id=<?php echo $eid?>" method="post">
+            <fieldset>
+                <div class="am-form-group">
+                    <label for="doc-ta-1">你的答案</label>
+                    <textarea class="" rows="5" id="doc-ta-1" name="content"></textarea>
+                </div>
+                <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
+            </fieldset>
+        </form>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="js/jquery.raty.js" type="text/javascript"></script>
 </body>
+
 </html>
