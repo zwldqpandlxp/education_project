@@ -25,9 +25,10 @@
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
         <form action="teacher/add_test" method="post">
-            作业名称：<input type="text" style="border: 1px solid #ccc; margin: 10px 0" value="<?php echo $result->home_Name;?>"><br>
+            作业名称：<input type="text" name="name" style="border: 1px solid #ccc; margin: 10px 0" value="<?php echo $result->home_Name;?>"><br>
             作业内容：<textarea name="content" id="ta_blog_content"
-                           style="width:750px;height:300px;" ><?php echo $result->home_content;?></textarea><br>
+                           style="width:750px;height:300px;" ><?php echo $result->home_Content;?></textarea><br>
+            <input type="hidden" value="<?php echo $result->cour_Id;?>" name="course">
             截至时间：<input type="date" style="border: 1px solid #ccc; margin: 10px 0" value="<?php echo $result->home_End;?>"><br>
             <input type="submit" value="提交">
         </form>

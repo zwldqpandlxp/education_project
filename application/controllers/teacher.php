@@ -16,13 +16,16 @@ class Teacher extends CI_Controller{
         $username=$this->input->post('username');
         $email=$this->input->post('email');
         $gender=$this->input->post('gender');
+        $jibie=$this->input->post('jibie');
         $dec=$this->input->post('mor');
         $this->load->model('user_modol');
-        $result=$this->user_modol->get_decid_by_mor($dec);
+        $this->load->model('teacher_model');
+        $result=$this->user_modol->get($dec);
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
         if(strstr($email,'@')){
-            $row=$this->user_modol->set_itro($username,$email,$gender,$result);
+            $row=$this->teacher_model->save_tea($username,$email,$gender,$result->dept_Id,$jibie,$user_id);
             if($row>0){
-                redirect('welcome/t_index');
+                redirect('teacherF/t_index');
             }else{
                 $this->load->view('t_introduce');
             }
@@ -102,12 +105,14 @@ class Teacher extends CI_Controller{
         $data=$this->input->post('data');
         $this->load->model('teacher_model');
         $course=$this->input->post('course');
-        $course_id=$this->teacher_model->get_couser_id_by_course($course);
         $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
         $start=date("Y-m-d");
-        $row=$this->teacher_model->save_test_by_tea_id($teac_id->teac_Id,$name,$content,$data,$course_id->cour_Id,$start);
+        $row=$this->teacher_model->save_test_by_tea_id($teac_id->teac_Id,$name,$content,$data,$course,$start);
+        $results=$this->teacher_model->get_lesson_by_ti($teac_id->teac_Id);
         if($row){
-            redirect('teacher/t_lesson');
+            redirect('teacher/t_lesson',array(
+                'result'=>$results
+            ));
         }
     }
     public function t_change_test(){
@@ -121,7 +126,8 @@ class Teacher extends CI_Controller{
     public function t_lesson(){
         $user_id=$this -> session -> userdata('logindata')->user_Id;
         $this->load->model('teacher_model');
-        $results=$this->teacher_model->get_lesson_by_ti($user_id);
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $results=$this->teacher_model->get_lesson_by_ti($teac_id->teac_Id);
         $this->load->view('t_lesson',array(
             'results'=>$results
         ));
@@ -184,8 +190,10 @@ class Teacher extends CI_Controller{
         $this->load->view('t_class_controllar1');
     }
     public function video_begin(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
         $course_id=$this->input->get('course');
         $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
         $results=$this->teacher_model->get_vido_by_cour_id($course_id);
         $this->load->view('t_course_test',array(
             'results'=>$results
@@ -198,10 +206,26 @@ class Teacher extends CI_Controller{
         $xf=$this->input->post('xf');
         $ms=$this->input->post('ms');
         $this->load->model('teacher_model');
-        $results=$this->teacher_model->save_couser($class,$time,$xf,$ms,$user_id);
-        if($results>0){
-            redirect('teacher/t_class_controllar1');
+        $row=$this->teacher_model->get_couser_id_by_course($class);
+        if($row>0){
+            $cour_id=$this->teacher_model->get_couser_id_by_course($class);
+            $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+            $result=$this->teacher_model->save_couser_lianjie($cour_id->cour_Id,$teac_id->teac_Id);
+            if($result){
+                redirect('teacher/t_class_controllar1');
+            }
+        }else{
+            $results=$this->teacher_model->save_couser($class,$time,$xf,$ms,$user_id);
+            if($results>0){
+                $cour_id=$this->teacher_model->get_couser_id_by_course($class);
+                $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+                $result=$this->teacher_model->save_couser_lianjie($cour_id,$teac_id);
+                if($result){
+                    redirect('teacher/t_class_controllar1');
+                }
+            }
         }
+
     }
     public function t_sor(){
         $this->load->view('t_sor');
@@ -259,15 +283,120 @@ class Teacher extends CI_Controller{
         }
     }
     public function check_exam(){
+        $course=$this->input->get('course');
         $exam_id=$this->input->get('exam');
         $this->load->model('teacher_model');
         $resluts=$this->teacher_model->get_exam_by_exam_id($exam_id);
         if($resluts>0){
             $this->load->view('t_check_exam',array(
-                'results'=>$resluts
+                'results'=>$resluts,
+                'course'=>$course
         ));
         }
+    }
+    public function del_exam(){
+        $exam=$this->input->get('exam');
+        $this->load->model('teacher_model');
+        $resluts=$this->teacher_model->del_exam_con_by_exam_id($exam);
+        if($resluts>0){
+            $row=$this->teacher_model->del_exam_by_exam_id($exam);
+            if($row>0){
+                redirect('teacher/t_exam');
+            }
+        }
+    }
+    public function t_change_exam(){
+        $course=$this->input->get('course');
+        $exam_id=$this->input->get('exam');
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $course_id=$this->teacher_model->get_couser_id_by_course($course);
+        $results=$this->teacher_model->get_stu_by_tea_id_cour($teac_id->teac_Id,$course_id->cour_Id);
+        $this->load->view('t_change_exam',array(
+            'results'=>$results,
+            'exam'=>$exam_id,
+            'course'=>$course
+        ));
+    }
+    public function t_pigai(){
+        $course=$this->input->get('course');
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $name=$this->input->get('name');
+        $exam_id=$this->input->get('exam');
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $stu_arr=$this->teacher_model->get_stu_arr_by_stu($teac_id->teac_Id,$name);
+        echo $stu_arr->evst_Id;
+        if(($stu_arr->evst_test)>0){
+            $resluts=$this->teacher_model->get_exam_con_by_exam_id($exam_id);
+            $this->load->view('t_pigai',array(
+                'resluts'=>$resluts,
+                'exam'=>$exam_id,
+                'course'=>$course
+            ));
+        }else{
+            echo '请先评价该学生';
+        }
 
+    }
+    public function get_gread(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $gread=$this->input->post('gread');
+        $name=$this->input->post('name');
+        $course=$this->input->post('course');
+        $this->load->model('teacher_model');
+        $course_id=$this->teacher_model->get_couser_id_by_course($course);
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $stu_arr=$this->teacher_model->get_stu_arr_by_stu($teac_id->teac_Id,$name);
+        $totle_gread=$gread*0.7+$stu_arr->evst_status*0.1+$stu_arr->evst_Attitude*0.1+$stu_arr->evst_Examination*0.1;
+        $resluts=$this->teacher_model->save_gread($totle_gread,$teac_id->teac_Id,$course_id->cour_Id,$name);
+        if($resluts>0){
+           redirect('teacher/t_exam');
+        }
+    }
+    public function t_pi_test(){
+        $home=$this->input->get('home');
+        $cour=$this->input->get('cour');
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $results=$this->teacher_model->get_stu_by_tea_id_cour($teac_id->teac_Id,$cour);
+        $this->load->view('t_pi_test',array(
+            'results'=>$results,
+            'home'=>$home
+        ));
+    }
+    public function t_pg_test(){
+        $home=$this->input->get('home');
+        $stu=$this->input->get('name');
+        $this->load->model('teacher_model');
+        $results=$this->teacher_model->get_home_con_by_home_id($home);
+        $this->load->view('t_pg_test',array(
+            'results'=>$results,
+            'stu'=>$stu
+        ));
+    }
+    public function get_gread_test(){
+        $user_id=$this -> session -> userdata('logindata')->user_Id;
+        $this->load->model('teacher_model');
+        $teac_id=$this->teacher_model->get_teac_id_by_user_id($user_id);
+        $stu=$this->input->post('name');
+        $gread=$this->input->post('gread');
+        $stu_arr=$this->teacher_model->get_stu_arr_by_stu($teac_id->teac_Id,$stu);
+        if(($stu_arr->evst_Id)>0){
+            $row=$this->teacher_model->save_gread_test($stu,$teac_id->teac_Id,$gread);
+            if($row){
+                $results=$this->teacher_model->get_homework_by_teacher_id($teac_id->teac_Id);
+                $this->load->view('t_test',array(
+                    'results'=>$results
+                ));
+            }else{
+                echo '批改失败';
+            }
+        }else{
+            echo '请先评价该学生';
+        }
     }
 }
 

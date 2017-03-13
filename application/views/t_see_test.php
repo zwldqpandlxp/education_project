@@ -28,7 +28,7 @@
         <div id="test" style="width: 600px;margin: 30px 100px;">
             <h3><?php echo $result->home_Name;?></h3>
             <p><?php echo $result->home_Start;?>-<?php echo $result->home_End;?></p>
-            <p style="text-indent: 28px"><?php echo $result->home_content;?>
+            <p style="text-indent: 28px"><?php echo $result->home_Content;?>
             </p>
             <a href="teacher/t_change_test?home=<?php echo $result->home_Id;?>" style="margin: 10px 0 15px 560px;display: block">修改</a>
         </div>

@@ -82,8 +82,8 @@
     $(window).load(function () {
         $('#location').trigger('click');
     });
-    rat('star1','result1',1,'jg1');
-    rat('star2','result2',1,'jg2');
+    rat('star1','result1',10,'jg1');
+    rat('star2','result2',10,'jg2');
     rat('star3','result3',10,'jg3');
     function rat(star,result,m,jg){
 

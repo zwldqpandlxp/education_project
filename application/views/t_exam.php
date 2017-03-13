@@ -29,20 +29,21 @@
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
         <a href="teacher/t_add_exam" style="margin-left:680px">添加考试+</a>
-        <h3 style="font-size: 20px;margin: 30px 0 15px 150px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;考试&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h3 style="font-size: 20px;margin: 30px 0 15px 150px"> &nbsp;&nbsp;考试&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科目
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             日期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             操作</h3>
         <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
-            <?php foreach($results as $result ){?>
-            <tr>
-                <th><?php echo $result->exam_Name?></th>
-                <th><?php echo $result->cour_Name?></th>
-                <th><?php echo $result->exam_Time?></th>
-                <th><a href="teacher/check_exam?exam=<?php echo $result->exam_Id?>">查看</a>|<a href="">删除</a></th>
-            </tr>
-            <?php }?>
+            <?php if($results != 0){
+            foreach($results as $result ){?>
+                <tr>
+                    <th style="width:300px;"><?php echo $result->exam_Name?></th>
+                    <th style="width:300px;"><?php echo $result->cour_Name?></th>
+                    <th style="width:300px;"><?php echo $result->exam_Time?></th>
+                    <th style="width:300px;"><a href="teacher/check_exam?exam=<?php echo $result->exam_Id?>&course=<?php echo $result->cour_Name?>">查看</a>|<a href="teacher/del_exam?exam=<?php echo $result->exam_Id?>">删除</a></th>
+                </tr>
+            <?php } }?>
         </table>
     </div>
 </div>

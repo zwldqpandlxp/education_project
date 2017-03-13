@@ -40,9 +40,12 @@
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
         <?php foreach($results as $result) {?>
+            <div style="width: 320px; height: 300px;float: left;margin: 0 20px">
         <video width="320" height="240" controls="controls" >
                     <source src="<?php echo $result->file_Url?>" type="video/mp4" />
         </video>
+            <div style="margin-left:140px "><?php echo $result->file_Name?></div>
+            </div>
         <?php }?>
     </div>
 

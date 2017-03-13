@@ -24,7 +24,7 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "t_nav.php"?>
     <div class="tpl-content-wrapper">
-        <form id="frm_reg" action="welcome/dot_itro" method="POST" style="float:left; width:620px;">
+        <form id="frm_reg" action="teacher/dot_itro" method="POST" style="float:left; width:620px;">
            <table cellpadding="0" cellspacing="0">
                 <tbody>
                 <tr>
@@ -32,6 +32,12 @@
                     <td><input name="username" id="username" maxlength="20" class="TEXT" style="width: 150px;"
                                type="text">
                         <span id="name_msg">请使用真实姓名</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>级别：</th>
+                    <td><input name="jibie" id="username" maxlength="20" class="TEXT" style="width: 150px;"
+                               type="text">
                     </td>
                 </tr>
                 <tr id="tr_email">

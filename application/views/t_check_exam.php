@@ -24,9 +24,12 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include"t_nav.php" ?>
     <div class="tpl-content-wrapper">
+        <div style="width: 800px;">
         <?php foreach($results as $result){?>
-            <p style="display: block; width: 800px;margin: 50px auto"><?php echo $result->exco_Content?></p>
+            <p style="display: block; width: 700px;margin: 40px 150px 0 ;background: #fff;"><?php echo $result->exco_Content?></p>
         <?php }?>
+        </div>
+        <a href="teacher/t_change_exam?exam=<?php echo $result->exam_Id?>&course=<?php echo $course?>" style="display: block; margin-left: 820px;margin-top: 20px">批改</a>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

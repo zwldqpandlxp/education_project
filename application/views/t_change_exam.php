@@ -22,15 +22,22 @@
 <body data-type="index">
 <?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include "t_nav.php"?>
+    <?php include"t_nav.php" ?>
     <div class="tpl-content-wrapper">
-        <form action="teacher/t_add_t1" method="post">
-            考试内容：<textarea name="content" id="ta_blog_content"
-                           style="width:750px;height:300px;"></textarea><br>
-            <input type="submit" value="下一题" style="margin-left: 780px">
-            <input type="hidden" name="course" value="<?php echo $result->exam_Id;?>">
-        </form>
-        <a href="teacher/t_exam"><button>结束</button></a>
+         <h3 style="font-size: 23px;margin: 30px 0 15px 150px">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp; &nbsp;账号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</h3>
+        <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
+            <?php foreach($results as $result){?>
+                <tr>
+                    <th style="width: 500px"><?php echo $result->stud_Name?></th>
+                    <th style="width: 500px"><?php echo $result->user_Name?></th>
+                    <th style="width: 500px"><?php echo $result->stud_Email?></th>
+                    <th style="width: 300px"><a href="teacher/t_pigai?name=<?php echo $result->stud_Id?>&exam=<?php echo $exam?>&course=<?php echo $course?>">批改</a></th>
+                </tr>
+            <?php }?>
+        </table>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

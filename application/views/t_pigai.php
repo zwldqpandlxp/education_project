@@ -22,15 +22,21 @@
 <body data-type="index">
 <?php include "t_header.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include "t_nav.php"?>
+    <?php include"t_nav.php" ?>
     <div class="tpl-content-wrapper">
-        <form action="teacher/t_add_t1" method="post">
-            考试内容：<textarea name="content" id="ta_blog_content"
-                           style="width:750px;height:300px;"></textarea><br>
-            <input type="submit" value="下一题" style="margin-left: 780px">
-            <input type="hidden" name="course" value="<?php echo $result->exam_Id;?>">
-        </form>
-        <a href="teacher/t_exam"><button>结束</button></a>
+        <a href="teacher/t_change_exam" style="margin: 10px 0 15px 650px;display: block">返回-></a>
+        <div id="test" style="width: 600px;margin: 30px 100px;">
+            <?php foreach($resluts as $reslut){ ?>
+                <p style="color: red;"><?php echo $reslut->exco_Content?></p>
+            <?php }?>
+            <p><?php echo $reslut->doex_Content?></p>
+            <form action="teacher/get_gread" method="post">
+                <input type="text" name="gread" placeholder="输入得分">
+                <input type="hidden" value="<?php echo $reslut->stud_Id?>" name="name">
+                <input type="hidden" value="<?php echo $course?>" name="course">
+                <input type="submit" value="提交">
+            </form>
+        </div>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

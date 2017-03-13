@@ -29,8 +29,8 @@
                            style="width:750px;height:300px;"></textarea><br>
             <input type="submit" value="下一题" style="margin-left: 780px">
             <input type="hidden" name="course" value="<?php echo $result;?>">
-            <a href="teacher/t_exam"><button>结束</button></a>
         </form>
+        <a href="teacher/t_exam"><button>结束</button></a>
     </div>
 </div>
 <script src="assets/js/jquery.min.js"></script>

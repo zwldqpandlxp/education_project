@@ -41,4 +41,8 @@ class User_modol extends CI_Model {
 		$sql="select majo_Id from edu_major where majo_Name = $dec";
 		return $this->db->query($sql)->result();
 	}
+	public function get($dept){
+		$sql="select dept_Id from edu_department where dept_Name = '$dept'";
+		return $this->db->query($sql)->row();
+	}
 }

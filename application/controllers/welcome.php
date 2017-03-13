@@ -41,13 +41,15 @@ class Welcome extends CI_Controller {
     public  function do_reg(){
         $username=$this->input->post('username');
         $password=$this->input->post('password');
+        $this->load->model('user_modol');
+        $this->load->model('teacher_model');
         if(strlen($username) == 10){
             $row = $this->user_modol->save($username, $password, 1);
         }else{
             $row = $this->user_modol->save($username, $password, 2);
         }
         if($row>0){
-            redirect('welcome/login');
+                redirect('welcome/login');
         }else{
             redirect('student/reg');
         }

@@ -30,16 +30,16 @@
     <div class="tpl-content-wrapper">
         <a href="teacher/t_add_test"style="margin: 40px 0 15px 680px;display: block">添加作业+</a>
         <h3 style="font-size: 20px;margin: 0 0 15px 150px">作业名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结束时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</h3>
-            <table class="table table-hover" style="width: 700px; margin: 0 150px">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            结束时间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp&nbsp;操作</h3>
+            <table class="table table-hover" style="width: 620px; margin: 0 150px">
                 <?php foreach($results as $result){ ?>
                     <tr>
                         <th><a href=""><?php echo $result->home_Name?></a></th>
                         <th><?php echo $result->home_Start?></th>
                         <th><?php echo $result->home_End?></th>
-                        <th><a href="teacher/t_see_test?course=<?php echo $result->home_Id?>">查看</a>|<a href="">删除</a></th>
+                        <th><a href="teacher/t_see_test?course=<?php echo $result->home_Id?>">查看</a>|<a href="teacher/t_pi_test?home=<?php echo $result->home_Id?>&cour=<?php echo $result->cour_Id?>">批改</a>
                     </tr>
                 <?php }?>
             </table>
