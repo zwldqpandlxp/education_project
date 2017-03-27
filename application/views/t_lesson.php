@@ -21,7 +21,7 @@
     <!--    <link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
     <style>
         .lesson{
-            width: 25%;
+            width: 23%;
             height: 300px;
             border:1px solid;
             float: left;

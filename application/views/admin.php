@@ -1,4 +1,6 @@
-<?php $name = $this->session->userdata('logindata'); ?>
+<?php
+$loginID = $this -> session -> userdata('logindata');
+?>
 <!doctype html>
 <html>
 <head>
@@ -18,24 +20,37 @@
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/echarts.min.js"></script>
+    <style>
+        .tpl-content-wrapper{
+            width: 90%;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body data-type="index">
-<?php include "t_header.php" ?>
+<?php include "a_heaser.php" ?>
 <div class="tpl-page-container tpl-page-header-fixed">
-    <?php include"t_nav.php" ?>
+    <?php include "a_nav.php"?>
     <div class="tpl-content-wrapper">
-        <a href="teacher/t_change_exam" style="margin: 10px 0 15px 650px;display: block">返回-></a>
-        <div id="test" style="width: 600px;margin: 30px 100px;">
-            <?php foreach($resluts as $reslut){ ?>
-                <p style="color: red;"><?php echo $reslut->exco_Content?></p>
-            <?php }?>
-            <p><?php echo $reslut->doex_Content?></p>
-            <form action="teacher/get_gread" method="post">
-                <input type="text" name="gread" placeholder="输入得分">
-                <input type="hidden" value="<?php echo $reslut->stud_Id?>" name="name">
-                <input type="hidden" value="<?php echo $exam?>" name="exam">
-                <input type="submit" value="提交">
-            </form>
+        <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
+            <ul class="am-slides">
+                <li>
+                    <img src="assets/img/nefu1.jpg">
+
+                </li>
+                <li>
+                    <img src="assets/img/nefu2.jpg">
+
+                </li>
+                <li>
+                    <img src="assets/img/nefu3.jpg">
+
+                </li>
+                <li>
+                    <img src="assets/img/nefu4.jpg">
+
+                </li>
+            </ul>
         </div>
     </div>
 </div>
@@ -43,5 +58,7 @@
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/iscroll.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="js/jquery.raty.js" type="text/javascript"></script>
 </body>
+
 </html>

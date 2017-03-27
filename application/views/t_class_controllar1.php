@@ -54,16 +54,24 @@
                     <table class="table table-striped" style="width: 100%;margin: 0 auto">
                         <tr>
                             <th>课程</th>
-                            <th>课时</th>
-                            <th>学分</th>
                             <th>描述</th>
+                            <th>平时</th>
+                            <th>作业</th>
+                            <th>期末</th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
                             <th>操作</th>
                         </tr>
                         <tr>
                             <th><input type="text" style="width:150px;" name="class" class="class_con"></th>
-                            <th><input type="text" style="width:70px;" name="time" class="class_con"></th>
-                            <th><input type="text" style="width:70px;" name="xf" class="class_con"></th>
-                            <th><input type="text" style="width:150px;" name="ms" class="class_con"></th>
+                            <th><input type="text" style="width:300px;" name="ms" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" name="ps" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" name="zy" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" name="qm" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
                             <th><input type="submit"value="提交"></th>
                         </tr>
                     </table>

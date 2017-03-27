@@ -35,10 +35,10 @@
         <table class="table table-striped" style="width: 600px;margin: 0 150px 20px">
             <?php foreach($results as $result){?>
                 <tr>
-                    <th><?php echo $result->stud_Name?></th>
-                    <th><?php echo $result->user_Name?></th>
-                    <th><?php echo $result->stud_Email?></th>
-                    <th><a href="teacher/del_stu?name=<?php echo $result->stud_Name?>">删除</a></th>
+                    <th style="width: 100px"><?php echo $result->stud_Name?></th>
+                    <th style="width: 172px;"><?php echo $result->user_Name?></th>
+                    <th style="width: 191px;"><?php echo $result->stud_Email?></th>
+                    <th style="width: 89px;"><a href="teacher/del_stu?name=<?php echo $result->stud_Name?>">删除</a></th>
                 </tr>
             <?php }?>
         </table>

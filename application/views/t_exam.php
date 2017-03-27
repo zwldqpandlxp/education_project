@@ -41,7 +41,7 @@
                     <th style="width:300px;"><?php echo $result->exam_Name?></th>
                     <th style="width:300px;"><?php echo $result->cour_Name?></th>
                     <th style="width:300px;"><?php echo $result->exam_Time?></th>
-                    <th style="width:300px;"><a href="teacher/check_exam?exam=<?php echo $result->exam_Id?>&course=<?php echo $result->cour_Name?>">查看</a>|<a href="teacher/del_exam?exam=<?php echo $result->exam_Id?>">删除</a></th>
+                    <th style="width:300px;"><a href="teacher/check_exam?exam=<?php echo $result->exam_Id?>&course=<?php echo $result->cour_Id?>">查看</a>|<a href="teacher/del_exam?exam=<?php echo $result->exam_Id?>">删除</a></th>
                 </tr>
             <?php } }?>
         </table>

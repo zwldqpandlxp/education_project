@@ -46,6 +46,26 @@
                         </div>
                     </th>
                 </tr>
+                <tr class="info">
+                    <th>作业完成态度：</th>
+                    <th>
+                        <div>
+                            <div id="star4"></div>
+                            <div id="result4"></div>
+                            <span id="jg4"><input type="hidden" name="arr"></span>
+                        </div>
+                    </th>
+                </tr>
+                <tr class="info">
+                    <th>考试成绩：</th>
+                    <th>
+                        <div>
+                            <div id="star5"></div>
+                            <div id="result5"></div>
+                            <span id="jg5"><input type="hidden" name="cj"></span>
+                        </div>
+                    </th>
+                </tr>
                 <tr>
                     <th>作业成绩：</th>
                     <th>
@@ -85,6 +105,8 @@
     rat('star1','result1',10,'jg1');
     rat('star2','result2',10,'jg2');
     rat('star3','result3',10,'jg3');
+    rat('star4','result4',10,'jg4');
+    rat('star5','result5',10,'jg5');
     function rat(star,result,m,jg){
 
         star= '#' + star;

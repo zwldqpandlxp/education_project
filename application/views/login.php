@@ -41,8 +41,7 @@
                         <input type="password" name="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
                     </div>
                         <button type="submit" class="am-btn am-btn-default">登录</button>
-                        <a href="student/reg" style="color:#fff" class="am-btn am-btn-default">注册（学生）</a>
-                        <a href="teacher/t_reg" style="color:#fff" class="am-btn am-btn-default">注册（教师）</a>
+                        <a href="student/reg" style="color:#fff" class="am-btn am-btn-default">注册</a>
                 </fieldset>
             </form>
         </div>

@@ -33,6 +33,7 @@
             <form action="teacher/get_gread_test" method="post">
                 <input type="text" name="gread" placeholder="输入得分">
                 <input type="hidden" value="<?php echo $stu?>" name="name">
+                <input type="hidden" value="<?php echo $home?>" name="home">
                 <input type="submit" value="提交">
             </form>
         </div>

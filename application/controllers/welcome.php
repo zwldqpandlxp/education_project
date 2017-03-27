@@ -35,8 +35,10 @@ class Welcome extends CI_Controller {
             $user_Power=$loginID->user_Power;
             if($user_Power==1){
                 redirect('student/index');
-            }else{
+            }else if($user_Power==2){
                 redirect('teacher/t_index');
+            }else{
+                redirect('teacher/admin');
             }
         }else{
             redirect('welcome/login');
@@ -50,14 +52,20 @@ class Welcome extends CI_Controller {
         $this->load->model('teacher_model');
         if(strlen($username) == 10){
             $row = $this->user_modol->save($username, $password, 1);
+            if($row>0){
+                redirect('welcome/login');
+            }else{
+                redirect('student/reg');
+            }
         }else{
             $row = $this->user_modol->save($username, $password, 2);
+            if($row>0){
+                redirect('teacher/admin');
+            }else{
+                redirect('teacher/t_reg');
+            }
         }
-        if($row>0){
-                redirect('welcome/login');
-        }else{
-            redirect('student/reg');
-        }
+
     }
 }
 

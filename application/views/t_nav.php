@@ -58,6 +58,12 @@
                             <span>学生评价</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="teacher/t_view_evaluate">
+                            <i class="am-icon-angle-right"></i>
+                            <span>查看评价</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 

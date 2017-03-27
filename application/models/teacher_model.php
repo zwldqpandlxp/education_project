@@ -2,7 +2,8 @@
 
 class Teacher_model extends CI_Model{
     public function getallclass(){
-        $sql="select c.cour_Name, t.teac_Name, c.cour_Credit,p.pict_Url,c.cour_Id from edu_course c, edu_select_course s, edu_teacher t,edu_picture p where c.cour_Id=s.cour_Id and s.teac_Id=t.teac_Id and p.pict_Id=c.pict_Id";
+       // $sql="select c.cour_Name, t.teac_Name, c.cour_Credit,p.pict_Url,c.cour_Id from edu_course c, edu_select_course s, edu_teacher t,edu_picture p where c.cour_Id=s.cour_Id and s.teac_Id=t.teac_Id and p.pict_Id=c.pict_Id";
+       $sql="select c.cour_Name, t.teac_Name, c.cour_Credit,p.pict_Url,c.cour_Id from edu_course c, edu_teach_course s, edu_teacher t,edu_picture p where c.cour_Id=s.cour_Id and s.teac_Id=t.teac_Id and p.pict_Id=c.pict_Id";
         return $this->db->query($sql)->result();
     }
     public function get_lesson_by_ti($user_id){
@@ -94,14 +95,16 @@ class Teacher_model extends CI_Model{
         ));
         return $this->db->affected_rows();
     }
-    public function save_atrr($test,$time,$gread,$stu,$teac_Id){
+    public function save_atrr($test,$time,$gread,$stu,$teac_Id,$arr,$cj){
         $this->db->insert('edu_evaluate_student',array(
             'evst_Id'=> null,
             'stud_Id'=>$stu,
             'evst_Attitude'=>$test,
             'evst_Examination'=>$gread,
             'evst_Status'=>$time,
-            'teac_Id'=>$teac_Id
+            'teac_Id'=>$teac_Id,
+            'test_attr'=>$arr,
+            'gread'=>$cj
         ));
         return $this->db->affected_rows();
     }
@@ -159,8 +162,8 @@ class Teacher_model extends CI_Model{
         $sql="select * from edu_evaluate_student where stud_Id = $name and teac_Id=$teac_id";
         return $this->db->query($sql)->row();
     }
-    public function save_gread($totle_gread,$teac_id,$course_id,$name){
-        $sql="update edu_select_course set seco_Grade = $totle_gread where stud_Id=$name and teac_Id = $teac_id and cour_Id=$course_id";
+    public function save_gread($name,$exam,$gread){
+        $sql="update edu_do_exam set do_Gread = $gread where stud_Id=$name and exam_Id=$exam";
         $this->db->query($sql);
         return $this->db->affected_rows();
     }
@@ -173,7 +176,7 @@ class Teacher_model extends CI_Model{
         return $this->db->query($sql)->result();
     }
     public function save_gread_test($stu,$teac_id,$gread){
-        $sql="update edu_evaluate_student set evst_Examination=$gread where stud_Id=$stu and teac_Id=$teac_id";
+        $sql="update edu_do_work set dowo_cj=$gread where stud_Id=$stu and home_Id =$teac_id";
         $this->db->query($sql);
         return $this->db->affected_rows();
     }
@@ -193,15 +196,35 @@ class Teacher_model extends CI_Model{
             ));
             return $this->db->affected_rows();
     }
-    public function save_couser_lianjie($cour_id,$teac_id){
+    public function save_couser_lianjie($cour_id,$teac_id,$ms,$ps,$qm,$zy){
         $this->db->insert('edu_teach_course',array(
             'teco_Id'=> null,
             'teac_Id'=>$teac_id,
-            'cour_Id'=>$cour_id
+            'cour_Id'=>$cour_id,
+            'ms'=>$ms,
+            'ps'=>$ps,
+            'qm'=>$qm,
+            'zy'=>$zy
         ));
         return $this->db->affected_rows();
     }
-
+    public function save_tixing($home,$cour,$teac_id){
+        $sql="update edu_homework set home_flag=1 where home_Id=$home and cour_Id=$cour and teac_Id=$teac_id";
+        $this->db->query($sql);
+        return $this->db->affected_rows();
+    }
+    public function get_evaluate(){
+        $sql = "select * from edu_evaluate_teacher where teac_Id=$teac";
+        return $this -> db -> query($sql) -> result();
+    }
+    public function get_home_by_teac_cour($tid,$cour){
+        $sql="select home_Id from edu_homework where teac_Id=$tid and cour_Id=$cour";
+        return $this->db->query($sql)->result();
+    }
+    public function get_test_by_stu_home($stu,$home){
+        $sql="select dowo_cj from edu_do_work where stud_Id=$stu and home_Id = $home";
+        return $this->db->query($sql)->result();
+    }
 }
 
 

@@ -34,7 +34,7 @@
                     <th style="width: 500px"><?php echo $result->stud_Name?></th>
                     <th style="width: 500px"><?php echo $result->user_Name?></th>
                     <th style="width: 500px"><?php echo $result->stud_Email?></th>
-                    <th style="width: 300px"><a href="teacher/t_pigai?name=<?php echo $result->stud_Id?>&exam=<?php echo $exam?>&course=<?php echo $course?>">批改</a></th>
+                    <th style="width: 300px"><a href="teacher/t_pigai?name=<?php echo $result->stud_Id?>&exam=<?php echo $exam?>&course=<?php echo $course?>">批改</a>|<a href="teacher/ps_gread?name=<?php echo $result->stud_Id?>&course=<?php echo $course?>&exam=<?php echo $exam?>">上分</a></th>
                 </tr>
             <?php }?>
         </table>

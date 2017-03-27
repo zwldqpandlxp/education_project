@@ -39,14 +39,10 @@
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick"><?php echo $loginID -> user_Name?> </span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+                    <span class="tpl-header-list-user-nick"><?php echo $loginID -> user_Name?>
                 </a>
-                <ul class="am-dropdown-content">
-                    <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
-                </ul>
             </li>
-            <li><a href="###" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
+            <li><a href="welcome/login" class="tpl-header-list-link"><span class="am-icon-sign-out tpl-header-list-ico-out-size"></span></a></li>
         </ul>
     </div>
 </header>

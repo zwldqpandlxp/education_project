@@ -49,24 +49,28 @@
                 <li class="am-active"><a href="javascript:;">添加课程</a></li>
             </ul>
             <div class="lesson-content">
-<!--                <h3 style="font-size: 23px;margin: 30px 0 15px 150px">课程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--                    &nbsp;课时长度&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-<!--                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;成绩计算 &nbsp;&nbsp;&nbsp;&nbsp; 考试</h3>-->
                 <form action="teacher/t_gread" method="post">
                     <table class="table table-striped" style="width: 100%;margin: 0 auto">
                         <tr>
                             <th>课程</th>
-                            <th>课时</th>
-                            <th>学分</th>
                             <th>描述</th>
+                            <th>平时</th>
+                            <th>作业</th>
+                            <th>期末</th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
                             <th>操作</th>
                         </tr>
                         <tr>
                             <th><input type="text" style="width:150px;" name="class" class="class_con"></th>
-                            <th><input type="text" style="width:70px;" name="time" class="class_con"></th>
-                            <th><input type="text" style="width:70px;" name="xf" class="class_con"></th>
-                            <th><input type="text" style="width:150px;" name="ms" class="class_con"></th>
+                            <th><input type="text" style="width:300px;" name="ms" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" name="ps" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" name="zy" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" name="qm" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
+                            <th><input type="text" style="width:50px;" class="class_con"></th>
                             <th><input type="submit"value="提交"></th>
                         </tr>
                     </table>

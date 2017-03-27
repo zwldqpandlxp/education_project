@@ -1103,7 +1103,4 @@ class CI_Upload {
 	// --------------------------------------------------------------------
 
 }
-// END Upload Class
 
-/* End of file Upload.php */
-/* Location: ./system/libraries/Upload.php */

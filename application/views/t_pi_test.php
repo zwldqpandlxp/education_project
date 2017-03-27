@@ -24,6 +24,7 @@
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include"t_nav.php" ?>
     <div class="tpl-content-wrapper">
+        <a href="teacher/tixing?home=<?php echo $home?>&cour=<?php echo $cour?>" style="display: block;margin-left: 600px">提醒未完成作业学生</a>
         <h3 style="font-size: 23px;margin: 30px 0 15px 150px">姓名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;账号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;邮箱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
