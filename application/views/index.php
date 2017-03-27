@@ -33,6 +33,9 @@ $loginID = $this -> session -> userdata('logindata');
 <div class="tpl-page-container tpl-page-header-fixed">
     <?php include "nav.php"?>
     <div class="tpl-content-wrapper">
+        <?php if($flag){?>
+            <h3 style="color: red;">你有未完成的作业，请尽快完成</h3>
+        <?php }?>
         <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
             <ul class="am-slides">
                 <li>
