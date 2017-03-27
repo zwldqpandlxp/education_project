@@ -98,6 +98,7 @@ $loginID = $this -> session -> userdata('logindata');
                 <th>课程名称</th>
                 <th>学分</th>
                 <th>学时</th>
+                <th>课程介绍</th>
                 <th>成绩</th>
             </tr>
             </thead>
@@ -108,6 +109,7 @@ $loginID = $this -> session -> userdata('logindata');
                     <td><?php echo $course -> cour_Name?></td>
                     <td><?php echo $course -> cour_Credit?></td>
                     <td><?php echo $course -> cour_Class?></td>
+                    <td><?php echo $course -> cour_Desc?></td>
                     <td><?php if(!$course -> seco_Attend) echo $course -> seco_Grade; else echo '正在修读'?></td>
                 </tr>
             <?php }?>
