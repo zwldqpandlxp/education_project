@@ -87,4 +87,8 @@ class Student_model extends CI_Model {
         $sql="select * from edu_file f where f.cour_Id = $cid";
         return $this -> db -> query($sql) -> result();
     }
+    public function get_flag_by_hid($hid){
+        $sql="select * from edu_homework h where h.home_Id = $hid";
+        return $this -> db -> query($sql) -> row();
+    }
 }
