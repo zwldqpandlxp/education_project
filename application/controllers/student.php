@@ -21,10 +21,18 @@ class Student extends CI_Controller {
                 $courses = $this -> course_model -> get_course_by_student($student -> stud_Id);
                 $homework = $this -> student_model -> get_homework_by_sid($student -> stud_Id);
                 $exam = $this -> student_model -> get_exam_by_student($student -> stud_Id);
+                $flag = false;
+                foreach($homework as $key => $value){
+                    $result = $this -> student_model -> get_flag_by_hid($value -> home_Id);
+                    if($result -> home_flag == 1){
+                        $flag = true;
+                    }
+                }
                 $this->load->view('index',array(
                     'courses' => $courses,
                     'homework' => $homework,
-                    'exam' => $exam
+                    'exam' => $exam,
+                    'flag' => $flag
                 ));
             }else{
                 redirect('student/introduce');
